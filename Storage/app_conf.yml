@@ -5,3 +5,8 @@ datastore:
   hostname: localhost
   port: 3306
   db: traffic
+events:
+  hostname: localhost
+  port: 9092
+  topic: events
+  consumer_group: event_group

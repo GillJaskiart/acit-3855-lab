@@ -3,12 +3,15 @@ from datetime import datetime
 import connexion
 from connexion import NoContent
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 import logging
 import logging.config
 import yaml
-from sqlalchemy import select
+import json
+from threading import Thread
+
+from kafka import KafkaConsumer
 
 
 from models import SpeedingViolation, CongestionCount
@@ -27,6 +30,12 @@ with open("app_conf.yml", "r") as f:
 ds = app_config["datastore"]
 DB_URL = f'mysql+pymysql://{ds["user"]}:{ds["password"]}@{ds["hostname"]}:{ds["port"]}/{ds["db"]}'
 ENGINE = create_engine(DB_URL)
+
+# Kafka config (add this section to app_conf.yml)
+kcfg = app_config["events"]
+KAFKA_HOST = f"{kcfg['hostname']}:{kcfg['port']}"
+TOPIC = kcfg["topic"]
+CONSUMER_GROUP = bcfg_group = kcfg.get("consumer_group", "event_group")  # default group
 
 
 
@@ -60,10 +69,7 @@ def use_db_session(func):
 
 
 @use_db_session
-def receive_speeding_batch(session, body):
-    """Receives a speeding reading batch event"""
-
-
+def store_speeding_event(session, body: dict):
     event = SpeedingViolation(
         sender_id=body["sender_id"],
         location_id=body["location_id"],
@@ -74,21 +80,13 @@ def receive_speeding_batch(session, body):
         speed_limit_kmh=float(body["speed_limit_kmh"]),
         direction=body.get("direction"),
     )
-
     session.add(event)
     session.commit()
-
-    logger.debug(
-        f"Stored event speeding with a trace id of {body['trace_id']}"
-    )
-    return NoContent, 201
+    logger.debug("Stored speeding event trace_id=%s", body["trace_id"])
 
 
 @use_db_session
-def receive_congestion_batch(session, body):
-    """
-    Receives ONE congestion count event and stores it in DB.
-    """
+def store_congestion_event(session, body: dict):
     event = CongestionCount(
         sender_id=body["sender_id"],
         location_id=body["location_id"],
@@ -99,15 +97,62 @@ def receive_congestion_batch(session, body):
         interval_seconds=int(body["interval_seconds"]),
         direction=body["direction"],
     )
-
     session.add(event)
     session.commit()
+    logger.debug("Stored congestion event trace_id=%s", body["trace_id"])
 
-    logger.debug(
-        f"Stored event congestion with a trace id of {body['trace_id']}"
+
+def process_messages():
+    """
+    Kafka consumer loop:
+    - connects to Kafka
+    - blocks waiting for messages
+    - stores payload to DB based on msg["type"]
+    - commits offsets only AFTER successful DB commit
+    """
+    logger.info("Storage Kafka consumer starting. Broker=%s Topic=%s Group=%s",
+                KAFKA_HOST, TOPIC, CONSUMER_GROUP)
+
+    consumer = KafkaConsumer(
+        TOPIC,
+        bootstrap_servers=[KAFKA_HOST],
+        group_id=CONSUMER_GROUP,
+        enable_auto_commit=False,      # we commit manually after DB write
+        auto_offset_reset="latest",    # match lab intent (do not replay old)
+        value_deserializer=lambda v: json.loads(v.decode("utf-8")),
     )
 
-    return NoContent, 201
+    for message in consumer:
+        try:
+            msg = message.value  # already deserialized dict
+            logger.info("Message received from Kafka: %s", msg)
+
+            payload = msg["payload"]
+            mtype = msg["type"]
+
+            if mtype == "speeding":
+                store_speeding_event(payload)
+            elif mtype == "congestion":
+                store_congestion_event(payload)
+            else:
+                logger.warning("Unknown message type '%s' - skipping", mtype)
+                # If you skip unknown types, you probably still want to commit
+                # so you don't get stuck re-reading them forever.
+
+            consumer.commit()
+            logger.info("Committed Kafka offset (group=%s)", CONSUMER_GROUP)
+
+        except Exception as e:
+            # Don't commit on failure — you WANT to retry this message
+            logger.exception("Error processing Kafka message: %s", e)
+
+
+def setup_kafka_thread():
+    t1 = Thread(target=process_messages)
+    t1.daemon = True
+    t1.start()
+    logger.info("Kafka consumer thread started")
+
 
 
 @use_db_session

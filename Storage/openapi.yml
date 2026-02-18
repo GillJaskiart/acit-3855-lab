@@ -8,20 +8,20 @@ info:
 
 paths:
   /events/speeding:
-    post:
-      summary: Receive a batch of school-zone speeding violation records
-      operationId: app.receive_speeding_batch
-      description: Stores a batch of speeding violation events from a single device.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/SpeedingViolationBatch"
-      responses:
-        "201":
-          description: Batch successfully received
-        "400":
-          description: Invalid input (schema validation failed)
+    # post:
+    #   summary: Receive a batch of school-zone speeding violation records
+    #   operationId: app.receive_speeding_batch
+    #   description: Stores a batch of speeding violation events from a single device.
+    #   requestBody:
+    #     content:
+    #       application/json:
+    #         schema:
+    #           $ref: "#/components/schemas/SpeedingViolationBatch"
+    #   responses:
+    #     "201":
+    #       description: Batch successfully received
+    #     "400":
+    #       description: Invalid input (schema validation failed)
 
     get:
       summary: Get speeding events between timestamps
@@ -57,20 +57,20 @@ paths:
           description: Invalid request
 
   /events/congestion:
-    post:
-      summary: Receive a batch of school-zone congestion count records
-      operationId: app.receive_congestion_batch
-      description: Stores a batch of vehicle-passage counts from a single device.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/CongestionCountBatch"
-      responses:
-        "201":
-          description: Batch successfully received
-        "400":
-          description: Invalid input (schema validation failed)
+    # post:
+    #   summary: Receive a batch of school-zone congestion count records
+    #   operationId: app.receive_congestion_batch
+    #   description: Stores a batch of vehicle-passage counts from a single device.
+    #   requestBody:
+    #     content:
+    #       application/json:
+    #         schema:
+    #           $ref: "#/components/schemas/CongestionCountBatch"
+    #   responses:
+    #     "201":
+    #       description: Batch successfully received
+    #     "400":
+    #       description: Invalid input (schema validation failed)
 
     get:
       summary: Get congestion events between timestamps

@@ -1,7 +1,11 @@
 from sqlalchemy import create_engine
 from models import Base
 
-DB_URL = "mysql+pymysql://jas:123@localhost:3306/traffic"
+with open("app_conf.yml", "r") as f:
+    app_config = yaml.safe_load(f.read())
+
+ds = app_config["datastore"]
+DB_URL = f'mysql+pymysql://{ds["user"]}:{ds["password"]}@{ds["hostname"]}:{ds["port"]}/{ds["db"]}'
 
 def main() -> None:
     engine = create_engine(DB_URL)
