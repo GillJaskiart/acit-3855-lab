@@ -1,10 +1,12 @@
 import connexion
 from connexion import NoContent
-import httpx
+# import httpx
 import uuid
 import logging
 import logging.config
 import yaml
+from pykafka import KafkaClient
+
 
 with open("log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read())
@@ -15,9 +17,38 @@ logger = logging.getLogger("basicLogger")
 with open("app_conf.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
-SPEEDING_URL = app_config["events"]["speeding"]["url"]
-CONGESTION_URL = app_config["events"]["congestion"]["url"]
 
+KAFKA_HOST = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
+KAFKA_TOPIC = app_config["events"]["topic"].encode("utf-8")
+
+client = KafkaClient(hosts=KAFKA_HOST)
+topic = client.topics[KAFKA_TOPIC]
+producer = topic.get_sync_producer()
+
+
+def _publish_event(event_type: str, event: dict, trace_id: str) -> int:
+    """
+    Publishes one event to Kafka topic 'events'
+    Returns HTTP-like status code (201 success, 500 failure)
+    """
+    try:
+        # Add event_type so Storage can distinguish later
+        payload = {
+            "type": event_type,
+            "payload": event,
+        }
+
+        producer.produce(json.dumps(payload).encode("utf-8"))
+
+        logger.info(
+            f"Published event {event_type} to Kafka (trace_id: {trace_id})"
+        )
+        return 201
+    except Exception as e:
+        logger.exception(
+            f"Failed to publish event {event_type} to Kafka (trace_id: {trace_id}): {e}"
+        )
+        return 500
 
 def receive_speeding_batch(body):
     """Receives a speeding reading batch event"""
@@ -27,7 +58,7 @@ def receive_speeding_batch(body):
     trace_id = str(uuid.uuid4())
     batch_timestamp = body["sent_timestamp"] 
 
-    status_code = 201  # default if nothing goes wrong
+    # status_code = 201  # default if nothing goes wrong
 
     for v in body.get("violations", []):
         storage_event = {
@@ -45,12 +76,14 @@ def receive_speeding_batch(body):
             f"Received event speeding with a trace id of {trace_id}"
         )
 
-        r = httpx.post(SPEEDING_URL, json=storage_event, timeout=5.0)
-        status_code = r.status_code
+        # r = httpx.post(SPEEDING_URL, json=storage_event, timeout=5.0)
+        # status_code = r.status_code
 
         logger.info(
             f"Response for event speeding (trace_id: {trace_id}) has status {status_code}"
         )
+
+        status_code = _publish_event("speeding", storage_event, trace_id)
 
         # If Storage fails, stop immediately and return that failure code
         if status_code >= 400:
@@ -66,7 +99,7 @@ def receive_congestion_batch(body):
     trace_id = str(uuid.uuid4())
     batch_timestamp = body["sent_timestamp"]  # rename for Storage
 
-    status_code = 201
+    # status_code = 201
 
     for c in body.get("counts", []):
         storage_event = {
@@ -84,12 +117,14 @@ def receive_congestion_batch(body):
             f"Received event congestion with a trace id of {trace_id}"
         )
 
-        r = httpx.post(CONGESTION_URL, json=storage_event, timeout=5.0)
-        status_code = r.status_code
+        # r = httpx.post(CONGESTION_URL, json=storage_event, timeout=5.0)
+        # status_code = r.status_code
 
         logger.info(
             f"Response for event congestion (trace_id: {trace_id}) has status {status_code}"
         )
+
+        status_code = _publish_event("congestion", storage_event, trace_id)
 
         if status_code >= 400:
             return NoContent, status_code
