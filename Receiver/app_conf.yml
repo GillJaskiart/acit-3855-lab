@@ -1,0 +1,6 @@
+version: 1
+events:
+  speeding:
+    url: http://localhost:8090/events/speeding
+  congestion:
+    url: http://localhost:8090/events/congestion

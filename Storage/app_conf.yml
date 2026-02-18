@@ -1,0 +1,7 @@
+version: 1
+datastore:
+  user: jas
+  password: 123
+  hostname: localhost
+  port: 3306
+  db: traffic

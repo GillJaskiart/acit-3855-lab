@@ -1,0 +1,12 @@
+version: 1
+datastore:
+  filename: stats.json
+
+scheduler:
+  interval: 5
+
+eventstores:
+  speeding:
+    url: http://localhost:8090/events/speeding
+  congestion:
+    url: http://localhost:8090/events/congestion

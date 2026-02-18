@@ -1,0 +1,585 @@
+2026-02-11 13:17:52,283 - basicLogger - DEBUG - Query speeding: 2026-01-01 00:00:00+00:00 to 2026-02-11 21:17:49.183889+00:00
+2026-02-11 13:17:52,340 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:17:54,757 - basicLogger - DEBUG - Query congestion: 2026-01-01 00:00:00+00:00 to 2026-02-11 21:17:49.183889+00:00
+2026-02-11 13:17:54,768 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:18:01,596 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:17:49.183889+00:00 to 2026-02-11 21:17:59.204325+00:00
+2026-02-11 13:18:01,596 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:18:04,084 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:17:49.183889+00:00 to 2026-02-11 21:17:59.204325+00:00
+2026-02-11 13:18:04,084 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:18:06,690 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:17:59.204325+00:00 to 2026-02-11 21:18:04.205727+00:00
+2026-02-11 13:18:06,695 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:18:09,849 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:17:59.204325+00:00 to 2026-02-11 21:18:04.205727+00:00
+2026-02-11 13:18:09,853 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:18:11,646 - basicLogger - DEBUG - Stored event speeding with a trace id of 5aea66e5-6a2f-4895-af7d-b00c7136644c
+2026-02-11 13:18:11,662 - basicLogger - DEBUG - Stored event speeding with a trace id of 93e608f0-8c9f-4fef-8d79-92c80017b621
+2026-02-11 13:18:11,675 - basicLogger - DEBUG - Stored event speeding with a trace id of 86cab3cc-9743-4d64-a799-61c85d2568cf
+2026-02-11 13:18:11,678 - basicLogger - DEBUG - Stored event speeding with a trace id of 4a5721df-b70f-4a8e-ae5b-7bc3c53d99bb
+2026-02-11 13:18:11,679 - basicLogger - DEBUG - Stored event speeding with a trace id of e9e8bd32-9e6b-42b0-9dc7-d16515dd076a
+2026-02-11 13:18:11,686 - basicLogger - DEBUG - Stored event speeding with a trace id of 79b8ed4c-6321-4c75-a302-9088e5a87470
+2026-02-11 13:18:11,690 - basicLogger - DEBUG - Stored event speeding with a trace id of bc579aa2-c1c5-4004-8ae5-44d2783417aa
+2026-02-11 13:18:11,692 - basicLogger - DEBUG - Stored event speeding with a trace id of cd5bedf8-1e7e-468f-af84-408a132dd13c
+2026-02-11 13:18:11,700 - basicLogger - DEBUG - Stored event speeding with a trace id of fd4b57ab-d00c-4bcc-92ee-bc22cc413e21
+2026-02-11 13:18:11,704 - basicLogger - DEBUG - Stored event speeding with a trace id of 57066e24-63d5-4039-91de-7a5e4105f407
+2026-02-11 13:18:15,702 - basicLogger - DEBUG - Stored event speeding with a trace id of 5aea66e5-6a2f-4895-af7d-b00c7136644c
+2026-02-11 13:18:15,705 - basicLogger - DEBUG - Stored event speeding with a trace id of 93e608f0-8c9f-4fef-8d79-92c80017b621
+2026-02-11 13:18:15,725 - basicLogger - DEBUG - Stored event speeding with a trace id of e9e8bd32-9e6b-42b0-9dc7-d16515dd076a
+2026-02-11 13:18:15,763 - basicLogger - DEBUG - Stored event speeding with a trace id of 57066e24-63d5-4039-91de-7a5e4105f407
+2026-02-11 13:18:15,780 - basicLogger - DEBUG - Stored event speeding with a trace id of 86cab3cc-9743-4d64-a799-61c85d2568cf
+2026-02-11 13:18:15,801 - basicLogger - DEBUG - Stored event speeding with a trace id of cd5bedf8-1e7e-468f-af84-408a132dd13c
+2026-02-11 13:18:15,801 - basicLogger - DEBUG - Stored event speeding with a trace id of fd4b57ab-d00c-4bcc-92ee-bc22cc413e21
+2026-02-11 13:18:15,815 - basicLogger - DEBUG - Stored event speeding with a trace id of 4a5721df-b70f-4a8e-ae5b-7bc3c53d99bb
+2026-02-11 13:18:15,821 - basicLogger - DEBUG - Stored event speeding with a trace id of bc579aa2-c1c5-4004-8ae5-44d2783417aa
+2026-02-11 13:18:15,824 - basicLogger - DEBUG - Stored event speeding with a trace id of 79b8ed4c-6321-4c75-a302-9088e5a87470
+2026-02-11 13:18:16,890 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:04.205727+00:00 to 2026-02-11 21:18:14.178045+00:00
+2026-02-11 13:18:16,901 - basicLogger - DEBUG - Found 10 speeding events
+2026-02-11 13:18:19,807 - basicLogger - DEBUG - Stored event congestion with a trace id of 6fef49eb-3c32-4699-ac79-0c49e1f68431
+2026-02-11 13:18:19,869 - basicLogger - DEBUG - Stored event congestion with a trace id of d8fa0dbc-b3c1-4eef-b6b0-71d8c3db5053
+2026-02-11 13:18:19,920 - basicLogger - DEBUG - Stored event congestion with a trace id of 1302c313-6b13-4f5a-b545-a4f2e84a3257
+2026-02-11 13:18:19,922 - basicLogger - DEBUG - Stored event congestion with a trace id of 26ad371a-7c03-44c9-9d5b-c11dcfc99c52
+2026-02-11 13:18:20,019 - basicLogger - DEBUG - Stored event congestion with a trace id of 108a3b62-7759-4a13-9a77-591a37c472b2
+2026-02-11 13:18:20,033 - basicLogger - DEBUG - Stored event congestion with a trace id of b2a10ec1-3cf5-419b-bfce-1341dcd93705
+2026-02-11 13:18:20,033 - basicLogger - DEBUG - Stored event congestion with a trace id of 3c43145c-dd87-4a3a-999f-354febe90f8e
+2026-02-11 13:18:20,058 - basicLogger - DEBUG - Stored event congestion with a trace id of 83af10dc-e8cc-475b-82ab-34381dc4d823
+2026-02-11 13:18:20,065 - basicLogger - DEBUG - Stored event congestion with a trace id of 3eef11bb-1ae4-439c-945d-adec6b21b279
+2026-02-11 13:18:20,065 - basicLogger - DEBUG - Stored event congestion with a trace id of 89bfa833-6078-4463-b185-3fc43e405a2b
+2026-02-11 13:18:20,161 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:04.205727+00:00 to 2026-02-11 21:18:14.178045+00:00
+2026-02-11 13:18:20,168 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:18:23,669 - basicLogger - DEBUG - Stored event congestion with a trace id of 6fef49eb-3c32-4699-ac79-0c49e1f68431
+2026-02-11 13:18:23,677 - basicLogger - DEBUG - Stored event congestion with a trace id of d8fa0dbc-b3c1-4eef-b6b0-71d8c3db5053
+2026-02-11 13:18:23,724 - basicLogger - DEBUG - Stored event congestion with a trace id of 1302c313-6b13-4f5a-b545-a4f2e84a3257
+2026-02-11 13:18:23,756 - basicLogger - DEBUG - Stored event congestion with a trace id of 26ad371a-7c03-44c9-9d5b-c11dcfc99c52
+2026-02-11 13:18:23,792 - basicLogger - DEBUG - Stored event congestion with a trace id of b2a10ec1-3cf5-419b-bfce-1341dcd93705
+2026-02-11 13:18:23,797 - basicLogger - DEBUG - Stored event congestion with a trace id of 3eef11bb-1ae4-439c-945d-adec6b21b279
+2026-02-11 13:18:23,797 - basicLogger - DEBUG - Stored event congestion with a trace id of 108a3b62-7759-4a13-9a77-591a37c472b2
+2026-02-11 13:18:23,802 - basicLogger - DEBUG - Stored event congestion with a trace id of 83af10dc-e8cc-475b-82ab-34381dc4d823
+2026-02-11 13:18:23,811 - basicLogger - DEBUG - Stored event congestion with a trace id of 3c43145c-dd87-4a3a-999f-354febe90f8e
+2026-02-11 13:18:23,813 - basicLogger - DEBUG - Stored event congestion with a trace id of 89bfa833-6078-4463-b185-3fc43e405a2b
+2026-02-11 13:18:26,868 - basicLogger - DEBUG - Stored event speeding with a trace id of 443a5d05-32b2-419a-9e9a-b7f6e8f10a47
+2026-02-11 13:18:26,899 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:14.178045+00:00 to 2026-02-11 21:18:24.180045+00:00
+2026-02-11 13:18:26,904 - basicLogger - DEBUG - Found 10 speeding events
+2026-02-11 13:18:26,935 - basicLogger - DEBUG - Stored event speeding with a trace id of f4a5d0ca-5253-40ae-94d7-861b24d86952
+2026-02-11 13:18:26,993 - basicLogger - DEBUG - Stored event speeding with a trace id of 212784a9-6bb0-491f-9c10-e7b2099d61a3
+2026-02-11 13:18:26,998 - basicLogger - DEBUG - Stored event speeding with a trace id of 3f6d4289-093c-436b-bf2a-8090a3b7b579
+2026-02-11 13:18:27,010 - basicLogger - DEBUG - Stored event speeding with a trace id of 7e760322-70e2-4504-a378-0667541d3f08
+2026-02-11 13:18:27,048 - basicLogger - DEBUG - Stored event speeding with a trace id of 47efb6e8-7269-40e7-933f-6207bf26095c
+2026-02-11 13:18:27,070 - basicLogger - DEBUG - Stored event speeding with a trace id of a98b0ca8-3987-4a38-8e04-77bcc428d36f
+2026-02-11 13:18:27,075 - basicLogger - DEBUG - Stored event speeding with a trace id of 7f99be08-4d30-426a-bfda-b424a5b57373
+2026-02-11 13:18:27,086 - basicLogger - DEBUG - Stored event speeding with a trace id of 680b2fb3-715f-4375-bca7-64eb81e89042
+2026-02-11 13:18:27,108 - basicLogger - DEBUG - Stored event speeding with a trace id of f0f73bf3-bf12-4dc6-a276-f89f993c6405
+2026-02-11 13:18:29,606 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:14.178045+00:00 to 2026-02-11 21:18:24.180045+00:00
+2026-02-11 13:18:29,614 - basicLogger - DEBUG - Found 20 congestion events
+2026-02-11 13:18:29,943 - basicLogger - DEBUG - Stored event speeding with a trace id of 443a5d05-32b2-419a-9e9a-b7f6e8f10a47
+2026-02-11 13:18:30,041 - basicLogger - DEBUG - Stored event speeding with a trace id of f4a5d0ca-5253-40ae-94d7-861b24d86952
+2026-02-11 13:18:30,147 - basicLogger - DEBUG - Stored event speeding with a trace id of 3f6d4289-093c-436b-bf2a-8090a3b7b579
+2026-02-11 13:18:30,152 - basicLogger - DEBUG - Stored event speeding with a trace id of 212784a9-6bb0-491f-9c10-e7b2099d61a3
+2026-02-11 13:18:30,181 - basicLogger - DEBUG - Stored event speeding with a trace id of 7e760322-70e2-4504-a378-0667541d3f08
+2026-02-11 13:18:30,206 - basicLogger - DEBUG - Stored event speeding with a trace id of 680b2fb3-715f-4375-bca7-64eb81e89042
+2026-02-11 13:18:30,206 - basicLogger - DEBUG - Stored event speeding with a trace id of 7f99be08-4d30-426a-bfda-b424a5b57373
+2026-02-11 13:18:30,214 - basicLogger - DEBUG - Stored event speeding with a trace id of 47efb6e8-7269-40e7-933f-6207bf26095c
+2026-02-11 13:18:30,238 - basicLogger - DEBUG - Stored event speeding with a trace id of a98b0ca8-3987-4a38-8e04-77bcc428d36f
+2026-02-11 13:18:30,271 - basicLogger - DEBUG - Stored event speeding with a trace id of f0f73bf3-bf12-4dc6-a276-f89f993c6405
+2026-02-11 13:18:32,872 - basicLogger - DEBUG - Stored event congestion with a trace id of b79b9267-ebff-43c1-a041-8a00bf92b89f
+2026-02-11 13:18:33,009 - basicLogger - DEBUG - Stored event congestion with a trace id of e03bd4a6-8669-4f24-a511-7142a98006ae
+2026-02-11 13:18:33,138 - basicLogger - DEBUG - Stored event congestion with a trace id of 400c3c13-7db6-45d6-a881-17465f1123fc
+2026-02-11 13:18:33,272 - basicLogger - DEBUG - Stored event congestion with a trace id of bfbf4c1f-c9ac-4b41-b3a6-9565da4795c2
+2026-02-11 13:18:33,282 - basicLogger - DEBUG - Stored event congestion with a trace id of 786e482c-5a52-4c99-ace8-50d5bff1e49e
+2026-02-11 13:18:33,298 - basicLogger - DEBUG - Stored event congestion with a trace id of ba86f4b8-366a-4b3e-88ff-9b2b5e6b8dff
+2026-02-11 13:18:33,319 - basicLogger - DEBUG - Stored event congestion with a trace id of ff1ea4eb-34c7-4d4f-8960-54b6c8597449
+2026-02-11 13:18:33,323 - basicLogger - DEBUG - Stored event congestion with a trace id of 922e39a6-b95b-49b5-aa58-6ef40b88a1a4
+2026-02-11 13:18:33,323 - basicLogger - DEBUG - Stored event congestion with a trace id of d60e663f-7b9b-4460-8fff-00def54dee96
+2026-02-11 13:18:33,323 - basicLogger - DEBUG - Stored event congestion with a trace id of 38f38624-6998-40a7-8a42-caa9d95ff598
+2026-02-11 13:18:35,426 - basicLogger - DEBUG - Stored event congestion with a trace id of b79b9267-ebff-43c1-a041-8a00bf92b89f
+2026-02-11 13:18:35,781 - basicLogger - DEBUG - Stored event congestion with a trace id of e03bd4a6-8669-4f24-a511-7142a98006ae
+2026-02-11 13:18:36,073 - basicLogger - DEBUG - Stored event congestion with a trace id of 400c3c13-7db6-45d6-a881-17465f1123fc
+2026-02-11 13:18:36,223 - basicLogger - DEBUG - Stored event congestion with a trace id of 786e482c-5a52-4c99-ace8-50d5bff1e49e
+2026-02-11 13:18:36,261 - basicLogger - DEBUG - Stored event congestion with a trace id of ff1ea4eb-34c7-4d4f-8960-54b6c8597449
+2026-02-11 13:18:36,296 - basicLogger - DEBUG - Stored event congestion with a trace id of ba86f4b8-366a-4b3e-88ff-9b2b5e6b8dff
+2026-02-11 13:18:36,302 - basicLogger - DEBUG - Stored event congestion with a trace id of bfbf4c1f-c9ac-4b41-b3a6-9565da4795c2
+2026-02-11 13:18:36,302 - basicLogger - DEBUG - Stored event congestion with a trace id of 38f38624-6998-40a7-8a42-caa9d95ff598
+2026-02-11 13:18:36,312 - basicLogger - DEBUG - Stored event congestion with a trace id of d60e663f-7b9b-4460-8fff-00def54dee96
+2026-02-11 13:18:36,314 - basicLogger - DEBUG - Stored event congestion with a trace id of 922e39a6-b95b-49b5-aa58-6ef40b88a1a4
+2026-02-11 13:18:36,606 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:24.180045+00:00 to 2026-02-11 21:18:34.180481+00:00
+2026-02-11 13:18:36,613 - basicLogger - DEBUG - Found 20 speeding events
+2026-02-11 13:18:37,873 - basicLogger - DEBUG - Stored event speeding with a trace id of f0e016f1-c6c5-40c7-990b-5b2e84ad0140
+2026-02-11 13:18:38,238 - basicLogger - DEBUG - Stored event speeding with a trace id of 69faf751-47bc-450e-bb2d-3c3bdf18461e
+2026-02-11 13:18:38,898 - basicLogger - DEBUG - Stored event speeding with a trace id of 0cd3f4ae-c6c9-4584-8e29-d29522d36b13
+2026-02-11 13:18:39,261 - basicLogger - DEBUG - Stored event speeding with a trace id of 9637dbb3-c2d8-4c26-b123-31354dfa00ec
+2026-02-11 13:18:39,271 - basicLogger - DEBUG - Stored event speeding with a trace id of 267c2771-d2eb-4ef4-aba2-b2264ab2191e
+2026-02-11 13:18:39,277 - basicLogger - DEBUG - Stored event speeding with a trace id of 01da61cf-56e8-48c7-8e1f-d48bbe10e657
+2026-02-11 13:18:39,282 - basicLogger - DEBUG - Stored event speeding with a trace id of d8325074-4c7f-4a8d-a497-a23964721522
+2026-02-11 13:18:39,290 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:24.180045+00:00 to 2026-02-11 21:18:34.180481+00:00
+2026-02-11 13:18:39,290 - basicLogger - DEBUG - Stored event speeding with a trace id of e63d8417-0217-4ce6-addb-605ff548aff4
+2026-02-11 13:18:39,299 - basicLogger - DEBUG - Found 10 congestion events
+2026-02-11 13:18:39,318 - basicLogger - DEBUG - Stored event speeding with a trace id of 6c954c43-d565-47cb-8c53-f86ad3a019c9
+2026-02-11 13:18:39,332 - basicLogger - DEBUG - Stored event speeding with a trace id of 96f5d91f-80b7-45d0-93cd-7e2eee2b5ce7
+2026-02-11 13:18:40,362 - basicLogger - DEBUG - Stored event speeding with a trace id of f0e016f1-c6c5-40c7-990b-5b2e84ad0140
+2026-02-11 13:18:40,673 - basicLogger - DEBUG - Stored event speeding with a trace id of 69faf751-47bc-450e-bb2d-3c3bdf18461e
+2026-02-11 13:18:41,319 - basicLogger - DEBUG - Stored event speeding with a trace id of 0cd3f4ae-c6c9-4584-8e29-d29522d36b13
+2026-02-11 13:18:42,165 - basicLogger - DEBUG - Stored event speeding with a trace id of 267c2771-d2eb-4ef4-aba2-b2264ab2191e
+2026-02-11 13:18:42,168 - basicLogger - DEBUG - Stored event speeding with a trace id of 9637dbb3-c2d8-4c26-b123-31354dfa00ec
+2026-02-11 13:18:42,168 - basicLogger - DEBUG - Stored event speeding with a trace id of 01da61cf-56e8-48c7-8e1f-d48bbe10e657
+2026-02-11 13:18:42,174 - basicLogger - DEBUG - Stored event speeding with a trace id of 96f5d91f-80b7-45d0-93cd-7e2eee2b5ce7
+2026-02-11 13:18:42,201 - basicLogger - DEBUG - Stored event speeding with a trace id of d8325074-4c7f-4a8d-a497-a23964721522
+2026-02-11 13:18:42,203 - basicLogger - DEBUG - Stored event speeding with a trace id of e63d8417-0217-4ce6-addb-605ff548aff4
+2026-02-11 13:18:42,203 - basicLogger - DEBUG - Stored event speeding with a trace id of 6c954c43-d565-47cb-8c53-f86ad3a019c9
+2026-02-11 13:18:42,802 - basicLogger - DEBUG - Stored event congestion with a trace id of c6a80318-ce35-423d-9b93-d14a0b97e871
+2026-02-11 13:18:43,133 - basicLogger - DEBUG - Stored event congestion with a trace id of 90761ff8-e957-4138-bb09-d2ea775cea41
+2026-02-11 13:18:43,770 - basicLogger - DEBUG - Stored event congestion with a trace id of 15711723-91de-4ee3-bc8c-55a86af2a38f
+2026-02-11 13:18:45,128 - basicLogger - DEBUG - Stored event congestion with a trace id of 169039c0-9ce7-4fd3-beb6-b8b8cc72e76d
+2026-02-11 13:18:45,136 - basicLogger - DEBUG - Stored event congestion with a trace id of a430026a-59bb-41d2-a0ec-a823c4be2784
+2026-02-11 13:18:45,141 - basicLogger - DEBUG - Stored event congestion with a trace id of a6d09467-edd5-446b-aef2-25c650c65595
+2026-02-11 13:18:45,141 - basicLogger - DEBUG - Stored event congestion with a trace id of 69228af6-a160-4c74-b8df-551c918ad457
+2026-02-11 13:18:45,141 - basicLogger - DEBUG - Stored event congestion with a trace id of a7bc795e-f7b0-484d-8f79-f3c75d7c0f7d
+2026-02-11 13:18:45,147 - basicLogger - DEBUG - Stored event congestion with a trace id of cb8b8023-cac4-485e-bd0f-4294d89c33ca
+2026-02-11 13:18:45,162 - basicLogger - DEBUG - Stored event congestion with a trace id of ba35ec2c-9cd7-4d50-aee7-dca3b674cc8c
+2026-02-11 13:18:45,440 - basicLogger - DEBUG - Stored event congestion with a trace id of c6a80318-ce35-423d-9b93-d14a0b97e871
+2026-02-11 13:18:45,603 - basicLogger - DEBUG - Stored event congestion with a trace id of 90761ff8-e957-4138-bb09-d2ea775cea41
+2026-02-11 13:18:46,222 - basicLogger - DEBUG - Stored event congestion with a trace id of 15711723-91de-4ee3-bc8c-55a86af2a38f
+2026-02-11 13:18:46,607 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:34.180481+00:00 to 2026-02-11 21:18:44.177626+00:00
+2026-02-11 13:18:46,612 - basicLogger - DEBUG - Found 20 speeding events
+2026-02-11 13:18:48,122 - basicLogger - DEBUG - Stored event congestion with a trace id of a430026a-59bb-41d2-a0ec-a823c4be2784
+2026-02-11 13:18:48,161 - basicLogger - DEBUG - Stored event congestion with a trace id of 69228af6-a160-4c74-b8df-551c918ad457
+2026-02-11 13:18:48,175 - basicLogger - DEBUG - Stored event congestion with a trace id of a6d09467-edd5-446b-aef2-25c650c65595
+2026-02-11 13:18:48,176 - basicLogger - DEBUG - Stored event congestion with a trace id of 169039c0-9ce7-4fd3-beb6-b8b8cc72e76d
+2026-02-11 13:18:48,177 - basicLogger - DEBUG - Stored event congestion with a trace id of a7bc795e-f7b0-484d-8f79-f3c75d7c0f7d
+2026-02-11 13:18:48,177 - basicLogger - DEBUG - Stored event congestion with a trace id of cb8b8023-cac4-485e-bd0f-4294d89c33ca
+2026-02-11 13:18:48,212 - basicLogger - DEBUG - Stored event congestion with a trace id of ba35ec2c-9cd7-4d50-aee7-dca3b674cc8c
+2026-02-11 13:18:48,303 - basicLogger - DEBUG - Stored event speeding with a trace id of 54f9236a-5137-4e86-9a1e-20bdc8776444
+2026-02-11 13:18:48,434 - basicLogger - DEBUG - Stored event speeding with a trace id of 84e71eff-5409-427e-9cb1-2234822d7973
+2026-02-11 13:18:48,676 - basicLogger - DEBUG - Stored event speeding with a trace id of f47e99ad-f8fb-4c8f-bff2-c33fabb8bebb
+2026-02-11 13:18:49,013 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:34.180481+00:00 to 2026-02-11 21:18:44.177626+00:00
+2026-02-11 13:18:49,021 - basicLogger - DEBUG - Found 13 congestion events
+2026-02-11 13:18:51,252 - basicLogger - DEBUG - Stored event speeding with a trace id of 4f05a356-da02-4f38-abe9-4604dc243b45
+2026-02-11 13:18:51,305 - basicLogger - DEBUG - Stored event speeding with a trace id of 48f092e6-092e-4f80-a09f-5bd0034d8a47
+2026-02-11 13:18:51,336 - basicLogger - DEBUG - Stored event speeding with a trace id of ee7d8d85-215d-4149-8da2-044307d1aab1
+2026-02-11 13:18:51,369 - basicLogger - DEBUG - Stored event speeding with a trace id of fb5abf10-41b9-4c80-aff0-47335d2c6b12
+2026-02-11 13:18:51,388 - basicLogger - DEBUG - Stored event speeding with a trace id of 65e7939f-cdf0-43fd-ae70-e62cf318497d
+2026-02-11 13:18:51,392 - basicLogger - DEBUG - Stored event speeding with a trace id of df67a926-0a6a-44e1-8a07-9651cbb9727e
+2026-02-11 13:18:51,392 - basicLogger - DEBUG - Stored event speeding with a trace id of d84bd53b-256b-48b0-9f5b-5afcfe78de5a
+2026-02-11 13:18:51,452 - basicLogger - DEBUG - Stored event speeding with a trace id of 54f9236a-5137-4e86-9a1e-20bdc8776444
+2026-02-11 13:18:51,464 - basicLogger - DEBUG - Stored event speeding with a trace id of 84e71eff-5409-427e-9cb1-2234822d7973
+2026-02-11 13:18:51,574 - basicLogger - DEBUG - Stored event speeding with a trace id of f47e99ad-f8fb-4c8f-bff2-c33fabb8bebb
+2026-02-11 13:18:51,669 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:44.177626+00:00 to 2026-02-11 21:18:49.187637+00:00
+2026-02-11 13:18:51,673 - basicLogger - DEBUG - Found 3 speeding events
+2026-02-11 13:18:54,464 - basicLogger - DEBUG - Stored event speeding with a trace id of 4f05a356-da02-4f38-abe9-4604dc243b45
+2026-02-11 13:18:54,474 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:44.177626+00:00 to 2026-02-11 21:18:49.187637+00:00
+2026-02-11 13:18:54,482 - basicLogger - DEBUG - Found 17 congestion events
+2026-02-11 13:18:54,485 - basicLogger - DEBUG - Stored event speeding with a trace id of 48f092e6-092e-4f80-a09f-5bd0034d8a47
+2026-02-11 13:18:54,555 - basicLogger - DEBUG - Stored event speeding with a trace id of fb5abf10-41b9-4c80-aff0-47335d2c6b12
+2026-02-11 13:18:54,580 - basicLogger - DEBUG - Stored event speeding with a trace id of ee7d8d85-215d-4149-8da2-044307d1aab1
+2026-02-11 13:18:54,580 - basicLogger - DEBUG - Stored event speeding with a trace id of df67a926-0a6a-44e1-8a07-9651cbb9727e
+2026-02-11 13:18:54,580 - basicLogger - DEBUG - Stored event speeding with a trace id of 65e7939f-cdf0-43fd-ae70-e62cf318497d
+2026-02-11 13:18:54,580 - basicLogger - DEBUG - Stored event speeding with a trace id of d84bd53b-256b-48b0-9f5b-5afcfe78de5a
+2026-02-11 13:18:54,626 - basicLogger - DEBUG - Stored event congestion with a trace id of f47ac0f9-29f8-4066-acb4-d2a0ecc553b2
+2026-02-11 13:18:54,664 - basicLogger - DEBUG - Stored event congestion with a trace id of e77747c4-f77e-4fa3-b08f-359f90cc9f5d
+2026-02-11 13:18:54,666 - basicLogger - DEBUG - Stored event congestion with a trace id of aa4d8b48-6438-4783-9cea-b73d30a417a0
+2026-02-11 13:18:57,537 - basicLogger - DEBUG - Stored event congestion with a trace id of 491c79c1-3971-4a9f-bd69-ffab4cbd251f
+2026-02-11 13:18:57,550 - basicLogger - DEBUG - Stored event congestion with a trace id of c762ee9a-7fff-49b2-adfe-8ea2531edaa2
+2026-02-11 13:18:57,693 - basicLogger - DEBUG - Stored event congestion with a trace id of 0566dbc4-756e-4f40-8412-827e0e6b4a8d
+2026-02-11 13:18:57,700 - basicLogger - DEBUG - Stored event congestion with a trace id of 8e9786c7-71b9-4f30-a8e8-976f67395305
+2026-02-11 13:18:57,735 - basicLogger - DEBUG - Stored event congestion with a trace id of d5b9bc70-5655-42ed-935a-e87d77390fa5
+2026-02-11 13:18:57,744 - basicLogger - DEBUG - Stored event congestion with a trace id of f47ac0f9-29f8-4066-acb4-d2a0ecc553b2
+2026-02-11 13:18:57,749 - basicLogger - DEBUG - Stored event congestion with a trace id of c59f5893-c344-4a45-881b-377907c79559
+2026-02-11 13:18:57,837 - basicLogger - DEBUG - Stored event congestion with a trace id of 2b8afce7-8f03-4ea6-a7a4-bd06acbe8fd3
+2026-02-11 13:18:57,882 - basicLogger - DEBUG - Stored event congestion with a trace id of e77747c4-f77e-4fa3-b08f-359f90cc9f5d
+2026-02-11 13:18:57,882 - basicLogger - DEBUG - Stored event congestion with a trace id of aa4d8b48-6438-4783-9cea-b73d30a417a0
+2026-02-11 13:19:00,487 - basicLogger - DEBUG - Stored event congestion with a trace id of c762ee9a-7fff-49b2-adfe-8ea2531edaa2
+2026-02-11 13:19:00,547 - basicLogger - DEBUG - Stored event congestion with a trace id of 491c79c1-3971-4a9f-bd69-ffab4cbd251f
+2026-02-11 13:19:00,759 - basicLogger - DEBUG - Stored event congestion with a trace id of 0566dbc4-756e-4f40-8412-827e0e6b4a8d
+2026-02-11 13:19:00,766 - basicLogger - DEBUG - Stored event congestion with a trace id of 8e9786c7-71b9-4f30-a8e8-976f67395305
+2026-02-11 13:19:00,800 - basicLogger - DEBUG - Stored event congestion with a trace id of d5b9bc70-5655-42ed-935a-e87d77390fa5
+2026-02-11 13:19:00,819 - basicLogger - DEBUG - Stored event congestion with a trace id of c59f5893-c344-4a45-881b-377907c79559
+2026-02-11 13:19:00,848 - basicLogger - DEBUG - Stored event speeding with a trace id of a51c3556-af95-43d2-94ec-bfd0c2a9300f
+2026-02-11 13:19:00,867 - basicLogger - DEBUG - Stored event congestion with a trace id of 2b8afce7-8f03-4ea6-a7a4-bd06acbe8fd3
+2026-02-11 13:19:00,884 - basicLogger - DEBUG - Stored event speeding with a trace id of f7444f3b-e5e7-4a52-9e26-6abedf846caa
+2026-02-11 13:19:00,916 - basicLogger - DEBUG - Stored event speeding with a trace id of f69c9e85-8a63-4448-b4fc-7e28be0aa571
+2026-02-11 13:19:01,636 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:49.187637+00:00 to 2026-02-11 21:18:59.176402+00:00
+2026-02-11 13:19:01,655 - basicLogger - DEBUG - Found 17 speeding events
+2026-02-11 13:19:03,304 - basicLogger - DEBUG - Stored event speeding with a trace id of 0055dad8-035e-4e24-b320-ff5387828d0d
+2026-02-11 13:19:03,420 - basicLogger - DEBUG - Stored event speeding with a trace id of d62a5d45-dc3c-4a54-9c0a-b9215a291940
+2026-02-11 13:19:04,234 - basicLogger - DEBUG - Stored event speeding with a trace id of 78ec1968-2f26-4e9e-9db8-d9f3d523be43
+2026-02-11 13:19:04,339 - basicLogger - DEBUG - Stored event speeding with a trace id of ab98d181-c057-4622-be17-797943a56921
+2026-02-11 13:19:04,555 - basicLogger - DEBUG - Stored event speeding with a trace id of a51c3556-af95-43d2-94ec-bfd0c2a9300f
+2026-02-11 13:19:04,587 - basicLogger - DEBUG - Stored event speeding with a trace id of ae7b51f6-5cb1-4477-9d99-45ac2586c39d
+2026-02-11 13:19:04,592 - basicLogger - DEBUG - Stored event speeding with a trace id of f7444f3b-e5e7-4a52-9e26-6abedf846caa
+2026-02-11 13:19:04,612 - basicLogger - DEBUG - Stored event speeding with a trace id of 67a594f3-08de-4448-8102-18008b101d67
+2026-02-11 13:19:04,682 - basicLogger - DEBUG - Stored event speeding with a trace id of cc0c9375-5244-4f43-ad75-0bfc12c0fafd
+2026-02-11 13:19:04,772 - basicLogger - DEBUG - Stored event speeding with a trace id of f69c9e85-8a63-4448-b4fc-7e28be0aa571
+2026-02-11 13:19:05,405 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:49.187637+00:00 to 2026-02-11 21:18:59.176402+00:00
+2026-02-11 13:19:05,418 - basicLogger - DEBUG - Found 13 congestion events
+2026-02-11 13:19:07,684 - basicLogger - DEBUG - Stored event speeding with a trace id of 0055dad8-035e-4e24-b320-ff5387828d0d
+2026-02-11 13:19:07,902 - basicLogger - DEBUG - Stored event speeding with a trace id of d62a5d45-dc3c-4a54-9c0a-b9215a291940
+2026-02-11 13:19:09,202 - basicLogger - DEBUG - Stored event speeding with a trace id of 78ec1968-2f26-4e9e-9db8-d9f3d523be43
+2026-02-11 13:19:09,279 - basicLogger - DEBUG - Stored event speeding with a trace id of ab98d181-c057-4622-be17-797943a56921
+2026-02-11 13:19:09,573 - basicLogger - DEBUG - Stored event congestion with a trace id of ab31c464-a297-4e84-836f-e170c859bd8a
+2026-02-11 13:19:09,615 - basicLogger - DEBUG - Stored event speeding with a trace id of ae7b51f6-5cb1-4477-9d99-45ac2586c39d
+2026-02-11 13:19:09,621 - basicLogger - DEBUG - Stored event speeding with a trace id of 67a594f3-08de-4448-8102-18008b101d67
+2026-02-11 13:19:09,748 - basicLogger - DEBUG - Stored event congestion with a trace id of fd1554b2-4354-4904-81f9-80f00bc68304
+2026-02-11 13:19:09,757 - basicLogger - DEBUG - Stored event speeding with a trace id of cc0c9375-5244-4f43-ad75-0bfc12c0fafd
+2026-02-11 13:19:09,757 - basicLogger - DEBUG - Stored event congestion with a trace id of ba1afdee-df8e-47e7-ab95-2e924a1c251e
+2026-02-11 13:19:11,410 - basicLogger - DEBUG - Stored event congestion with a trace id of ec39567e-ef47-4503-a47c-aa2232e47f76
+2026-02-11 13:19:11,918 - basicLogger - DEBUG - Stored event congestion with a trace id of f40ff889-6f36-4f08-a345-c8460452f236
+2026-02-11 13:19:13,301 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:18:59.176402+00:00 to 2026-02-11 21:19:09.180658+00:00
+2026-02-11 13:19:13,312 - basicLogger - DEBUG - Found 20 speeding events
+2026-02-11 13:19:14,120 - basicLogger - DEBUG - Stored event congestion with a trace id of bc299edf-42fe-47a7-aa0f-ac7aed5a2e5b
+2026-02-11 13:19:14,202 - basicLogger - DEBUG - Stored event congestion with a trace id of c6155080-d088-4b35-9c2e-9f82a2527ae4
+2026-02-11 13:19:14,621 - basicLogger - DEBUG - Stored event congestion with a trace id of ab31c464-a297-4e84-836f-e170c859bd8a
+2026-02-11 13:19:14,722 - basicLogger - DEBUG - Stored event congestion with a trace id of c45870b2-048b-4081-bf77-ee31eefc0449
+2026-02-11 13:19:14,732 - basicLogger - DEBUG - Stored event congestion with a trace id of fa21d777-28b1-46ff-b9d4-0bbd3823de22
+2026-02-11 13:19:14,867 - basicLogger - DEBUG - Stored event congestion with a trace id of aa11bc06-1da1-4a0a-b9f7-9b7c1e31107f
+2026-02-11 13:19:14,876 - basicLogger - DEBUG - Stored event congestion with a trace id of ba1afdee-df8e-47e7-ab95-2e924a1c251e
+2026-02-11 13:19:14,876 - basicLogger - DEBUG - Stored event congestion with a trace id of fd1554b2-4354-4904-81f9-80f00bc68304
+2026-02-11 13:19:15,729 - basicLogger - DEBUG - Stored event congestion with a trace id of ec39567e-ef47-4503-a47c-aa2232e47f76
+2026-02-11 13:19:15,966 - basicLogger - DEBUG - Stored event congestion with a trace id of f40ff889-6f36-4f08-a345-c8460452f236
+2026-02-11 13:19:17,031 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:18:59.176402+00:00 to 2026-02-11 21:19:09.180658+00:00
+2026-02-11 13:19:17,047 - basicLogger - DEBUG - Found 10 congestion events
+2026-02-11 13:19:18,805 - basicLogger - DEBUG - Stored event congestion with a trace id of bc299edf-42fe-47a7-aa0f-ac7aed5a2e5b
+2026-02-11 13:19:19,028 - basicLogger - DEBUG - Stored event congestion with a trace id of c6155080-d088-4b35-9c2e-9f82a2527ae4
+2026-02-11 13:19:19,682 - basicLogger - DEBUG - Stored event speeding with a trace id of fcde167d-5055-4800-9bbe-8cd9f099b0ca
+2026-02-11 13:19:19,776 - basicLogger - DEBUG - Stored event congestion with a trace id of c45870b2-048b-4081-bf77-ee31eefc0449
+2026-02-11 13:19:19,812 - basicLogger - DEBUG - Stored event congestion with a trace id of fa21d777-28b1-46ff-b9d4-0bbd3823de22
+2026-02-11 13:19:19,895 - basicLogger - DEBUG - Stored event congestion with a trace id of aa11bc06-1da1-4a0a-b9f7-9b7c1e31107f
+2026-02-11 13:19:19,911 - basicLogger - DEBUG - Stored event speeding with a trace id of f23b976b-6db3-49af-a912-489bb76097d1
+2026-02-11 13:19:19,933 - basicLogger - DEBUG - Stored event speeding with a trace id of d0ab87b9-2ce5-48b3-8bed-63ba9a5bd2f3
+2026-02-11 13:19:20,392 - basicLogger - DEBUG - Stored event speeding with a trace id of ddb3462a-b6e2-450e-96e3-7b5d0633db23
+2026-02-11 13:19:20,511 - basicLogger - DEBUG - Stored event speeding with a trace id of 7fb1d2f0-a2d6-429b-afb6-c6deeb10547a
+2026-02-11 13:19:23,223 - basicLogger - DEBUG - Stored event speeding with a trace id of a5a1d32d-73e6-49fc-838c-bf5858eece71
+2026-02-11 13:19:23,350 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:19:09.180658+00:00 to 2026-02-11 21:19:19.184973+00:00
+2026-02-11 13:19:23,366 - basicLogger - DEBUG - Found 3 speeding events
+2026-02-11 13:19:23,752 - basicLogger - DEBUG - Stored event speeding with a trace id of 6ca2d88c-774a-465d-a93d-251d3442d8ee
+2026-02-11 13:19:24,909 - basicLogger - DEBUG - Stored event speeding with a trace id of fcde167d-5055-4800-9bbe-8cd9f099b0ca
+2026-02-11 13:19:25,006 - basicLogger - DEBUG - Stored event speeding with a trace id of 8f8be5ba-0143-45b6-a917-1c24b38fef9c
+2026-02-11 13:19:25,058 - basicLogger - DEBUG - Stored event speeding with a trace id of 400f2756-9530-4268-be31-abcce40e86cc
+2026-02-11 13:19:25,158 - basicLogger - DEBUG - Stored event speeding with a trace id of 4b23112b-a6b3-47f3-8186-4557530faacf
+2026-02-11 13:19:25,165 - basicLogger - DEBUG - Stored event speeding with a trace id of d0ab87b9-2ce5-48b3-8bed-63ba9a5bd2f3
+2026-02-11 13:19:25,171 - basicLogger - DEBUG - Stored event speeding with a trace id of f23b976b-6db3-49af-a912-489bb76097d1
+2026-02-11 13:19:25,502 - basicLogger - DEBUG - Stored event speeding with a trace id of ddb3462a-b6e2-450e-96e3-7b5d0633db23
+2026-02-11 13:19:25,573 - basicLogger - DEBUG - Stored event speeding with a trace id of 7fb1d2f0-a2d6-429b-afb6-c6deeb10547a
+2026-02-11 13:19:27,324 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:19:09.180658+00:00 to 2026-02-11 21:19:19.184973+00:00
+2026-02-11 13:19:27,331 - basicLogger - DEBUG - Found 17 congestion events
+2026-02-11 13:19:27,350 - basicLogger - DEBUG - Stored event speeding with a trace id of a5a1d32d-73e6-49fc-838c-bf5858eece71
+2026-02-11 13:19:28,088 - basicLogger - DEBUG - Stored event speeding with a trace id of 6ca2d88c-774a-465d-a93d-251d3442d8ee
+2026-02-11 13:19:28,633 - basicLogger - DEBUG - Stored event congestion with a trace id of aa7b9255-bd0f-408e-bef6-c3e6e4de36b3
+2026-02-11 13:19:28,640 - basicLogger - DEBUG - Stored event speeding with a trace id of 8f8be5ba-0143-45b6-a917-1c24b38fef9c
+2026-02-11 13:19:28,672 - basicLogger - DEBUG - Stored event speeding with a trace id of 400f2756-9530-4268-be31-abcce40e86cc
+2026-02-11 13:19:28,709 - basicLogger - DEBUG - Stored event congestion with a trace id of bd2ddd8c-a273-43a1-ae12-a60746fdd5f1
+2026-02-11 13:19:28,709 - basicLogger - DEBUG - Stored event congestion with a trace id of 5c630db6-8c60-4510-8227-73f2b43f4600
+2026-02-11 13:19:28,713 - basicLogger - DEBUG - Stored event speeding with a trace id of 4b23112b-a6b3-47f3-8186-4557530faacf
+2026-02-11 13:19:28,753 - basicLogger - DEBUG - Stored event congestion with a trace id of 917d63d9-f171-41a1-b7bb-bfd456954d64
+2026-02-11 13:19:28,771 - basicLogger - DEBUG - Stored event congestion with a trace id of 634f959e-26cb-4f07-9ee4-fcfc17cbaaca
+2026-02-11 13:19:29,950 - basicLogger - DEBUG - Stored event congestion with a trace id of dbe36a2f-deaf-4d13-9215-772c5faed369
+2026-02-11 13:19:30,705 - basicLogger - DEBUG - Stored event congestion with a trace id of aaed2f85-1357-4e91-baa6-7081d7dda353
+2026-02-11 13:19:31,684 - basicLogger - DEBUG - Stored event congestion with a trace id of aa7b9255-bd0f-408e-bef6-c3e6e4de36b3
+2026-02-11 13:19:31,774 - basicLogger - DEBUG - Stored event congestion with a trace id of 634f959e-26cb-4f07-9ee4-fcfc17cbaaca
+2026-02-11 13:19:31,782 - basicLogger - DEBUG - Stored event congestion with a trace id of 5c630db6-8c60-4510-8227-73f2b43f4600
+2026-02-11 13:19:31,790 - basicLogger - DEBUG - Stored event congestion with a trace id of e82cf081-a147-4e2d-9827-3d16b80c730e
+2026-02-11 13:19:31,790 - basicLogger - DEBUG - Stored event congestion with a trace id of bd2ddd8c-a273-43a1-ae12-a60746fdd5f1
+2026-02-11 13:19:31,799 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:19:19.184973+00:00 to 2026-02-11 21:19:29.186652+00:00
+2026-02-11 13:19:31,807 - basicLogger - DEBUG - Found 17 speeding events
+2026-02-11 13:19:31,816 - basicLogger - DEBUG - Stored event congestion with a trace id of 7124be59-fd8b-4c3d-9b6d-1c821e28827f
+2026-02-11 13:19:31,821 - basicLogger - DEBUG - Stored event congestion with a trace id of bdccc22d-5c51-4d5b-b4b8-c68935a6a985
+2026-02-11 13:19:31,824 - basicLogger - DEBUG - Stored event congestion with a trace id of 917d63d9-f171-41a1-b7bb-bfd456954d64
+2026-02-11 13:19:32,361 - basicLogger - DEBUG - Stored event congestion with a trace id of dbe36a2f-deaf-4d13-9215-772c5faed369
+2026-02-11 13:19:33,172 - basicLogger - DEBUG - Stored event congestion with a trace id of aaed2f85-1357-4e91-baa6-7081d7dda353
+2026-02-11 13:19:34,572 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:19:19.184973+00:00 to 2026-02-11 21:19:29.186652+00:00
+2026-02-11 13:19:34,581 - basicLogger - DEBUG - Found 6 congestion events
+2026-02-11 13:19:34,594 - basicLogger - DEBUG - Stored event speeding with a trace id of 98ad99d2-8ba7-43f2-954d-3b38c8ef9943
+2026-02-11 13:19:34,777 - basicLogger - DEBUG - Stored event speeding with a trace id of 9b6ba0fd-f554-41bc-8daa-736cd458e317
+2026-02-11 13:19:34,813 - basicLogger - DEBUG - Stored event speeding with a trace id of 89a6b3e0-f357-4ee4-86a1-00ec624494cc
+2026-02-11 13:19:34,814 - basicLogger - DEBUG - Stored event speeding with a trace id of e138fd75-a221-47e9-8a63-5fffb488a48f
+2026-02-11 13:19:34,836 - basicLogger - DEBUG - Stored event congestion with a trace id of e82cf081-a147-4e2d-9827-3d16b80c730e
+2026-02-11 13:19:34,839 - basicLogger - DEBUG - Stored event congestion with a trace id of bdccc22d-5c51-4d5b-b4b8-c68935a6a985
+2026-02-11 13:19:34,839 - basicLogger - DEBUG - Stored event congestion with a trace id of 7124be59-fd8b-4c3d-9b6d-1c821e28827f
+2026-02-11 13:19:34,841 - basicLogger - DEBUG - Stored event speeding with a trace id of 7f78d292-6ce2-4e5d-beb5-71cd1ac62c72
+2026-02-11 13:19:35,070 - basicLogger - DEBUG - Stored event speeding with a trace id of 0464e839-443e-452c-9300-9de6af767531
+2026-02-11 13:19:35,669 - basicLogger - DEBUG - Stored event speeding with a trace id of 4924bf68-2401-42e5-849b-aa8ccf90c525
+2026-02-11 13:19:37,428 - basicLogger - DEBUG - Stored event speeding with a trace id of 98ad99d2-8ba7-43f2-954d-3b38c8ef9943
+2026-02-11 13:19:37,781 - basicLogger - DEBUG - Stored event speeding with a trace id of 9b6ba0fd-f554-41bc-8daa-736cd458e317
+2026-02-11 13:19:37,840 - basicLogger - DEBUG - Stored event speeding with a trace id of 89a6b3e0-f357-4ee4-86a1-00ec624494cc
+2026-02-11 13:19:37,888 - basicLogger - DEBUG - Stored event speeding with a trace id of 4980a5c5-1001-4947-a08c-a9d6614c4151
+2026-02-11 13:19:37,895 - basicLogger - DEBUG - Stored event speeding with a trace id of 7f78d292-6ce2-4e5d-beb5-71cd1ac62c72
+2026-02-11 13:19:37,895 - basicLogger - DEBUG - Stored event speeding with a trace id of e138fd75-a221-47e9-8a63-5fffb488a48f
+2026-02-11 13:19:37,913 - basicLogger - DEBUG - Stored event speeding with a trace id of c5057ec4-03e3-409a-8874-180ddfc1fed2
+2026-02-11 13:19:37,919 - basicLogger - DEBUG - Stored event speeding with a trace id of 354182f0-9069-408c-a7ab-f3570a8e4dd4
+2026-02-11 13:19:38,047 - basicLogger - DEBUG - Stored event speeding with a trace id of 0464e839-443e-452c-9300-9de6af767531
+2026-02-11 13:19:38,185 - basicLogger - DEBUG - Stored event speeding with a trace id of 4924bf68-2401-42e5-849b-aa8ccf90c525
+2026-02-11 13:19:39,873 - basicLogger - DEBUG - Stored event congestion with a trace id of fcdd6990-606e-47b8-b00b-22dca649b09c
+2026-02-11 13:19:40,744 - basicLogger - DEBUG - Stored event congestion with a trace id of a8f52ebd-4702-4794-b9b0-58c7baa0c8d4
+2026-02-11 13:19:40,938 - basicLogger - DEBUG - Stored event speeding with a trace id of c5057ec4-03e3-409a-8874-180ddfc1fed2
+2026-02-11 13:19:40,944 - basicLogger - DEBUG - Stored event congestion with a trace id of 71aa0f60-7705-4f0a-9795-d7f375556511
+2026-02-11 13:19:40,944 - basicLogger - DEBUG - Stored event congestion with a trace id of ef075bcb-ef4f-456e-8bdf-076a80da0acb
+2026-02-11 13:19:40,944 - basicLogger - DEBUG - Stored event speeding with a trace id of 4980a5c5-1001-4947-a08c-a9d6614c4151
+2026-02-11 13:19:40,967 - basicLogger - DEBUG - Stored event congestion with a trace id of 899e26da-3001-44b9-b13e-d1df65a9a31d
+2026-02-11 13:19:40,968 - basicLogger - DEBUG - Stored event speeding with a trace id of 354182f0-9069-408c-a7ab-f3570a8e4dd4
+2026-02-11 13:19:41,043 - basicLogger - DEBUG - Stored event congestion with a trace id of 07c1d55c-e9f1-4c29-a124-abe3684dc53c
+2026-02-11 13:19:41,158 - basicLogger - DEBUG - Stored event congestion with a trace id of 845f1ede-3533-46e1-86c7-93b8ab58f512
+2026-02-11 13:19:41,546 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:19:29.186652+00:00 to 2026-02-11 21:19:39.179909+00:00
+2026-02-11 13:19:41,552 - basicLogger - DEBUG - Found 17 speeding events
+2026-02-11 13:19:42,333 - basicLogger - DEBUG - Stored event congestion with a trace id of fcdd6990-606e-47b8-b00b-22dca649b09c
+2026-02-11 13:19:43,556 - basicLogger - DEBUG - Stored event congestion with a trace id of a8f52ebd-4702-4794-b9b0-58c7baa0c8d4
+2026-02-11 13:19:44,007 - basicLogger - DEBUG - Stored event congestion with a trace id of 57950aa1-3d94-4d06-af74-481b5a70a99c
+2026-02-11 13:19:44,008 - basicLogger - DEBUG - Stored event congestion with a trace id of ef075bcb-ef4f-456e-8bdf-076a80da0acb
+2026-02-11 13:19:44,008 - basicLogger - DEBUG - Stored event congestion with a trace id of c0dbbacc-77d3-4126-aa95-a8eed53fc762
+2026-02-11 13:19:44,041 - basicLogger - DEBUG - Stored event congestion with a trace id of c333cde5-870c-4767-9421-a78719649f1c
+2026-02-11 13:19:44,074 - basicLogger - DEBUG - Stored event congestion with a trace id of 899e26da-3001-44b9-b13e-d1df65a9a31d
+2026-02-11 13:19:44,088 - basicLogger - DEBUG - Stored event congestion with a trace id of 71aa0f60-7705-4f0a-9795-d7f375556511
+2026-02-11 13:19:44,095 - basicLogger - DEBUG - Stored event congestion with a trace id of 07c1d55c-e9f1-4c29-a124-abe3684dc53c
+2026-02-11 13:19:44,125 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:19:29.186652+00:00 to 2026-02-11 21:19:39.179909+00:00
+2026-02-11 13:19:44,130 - basicLogger - DEBUG - Found 15 congestion events
+2026-02-11 13:19:44,142 - basicLogger - DEBUG - Stored event congestion with a trace id of 845f1ede-3533-46e1-86c7-93b8ab58f512
+2026-02-11 13:19:44,790 - basicLogger - DEBUG - Stored event speeding with a trace id of f2a211e6-45df-4284-b5bb-085c42a95747
+2026-02-11 13:19:46,032 - basicLogger - DEBUG - Stored event speeding with a trace id of 064ae205-6655-41d9-97d7-c94dc60e9bf5
+2026-02-11 13:19:46,930 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:19:39.179909+00:00 to 2026-02-11 21:19:44.211286+00:00
+2026-02-11 13:19:46,939 - basicLogger - DEBUG - Found 4 speeding events
+2026-02-11 13:19:47,098 - basicLogger - DEBUG - Stored event congestion with a trace id of 57950aa1-3d94-4d06-af74-481b5a70a99c
+2026-02-11 13:19:47,101 - basicLogger - DEBUG - Stored event speeding with a trace id of 8750199b-c93d-440c-a19b-d776cdd23d6a
+2026-02-11 13:19:47,161 - basicLogger - DEBUG - Stored event congestion with a trace id of c333cde5-870c-4767-9421-a78719649f1c
+2026-02-11 13:19:47,166 - basicLogger - DEBUG - Stored event congestion with a trace id of c0dbbacc-77d3-4126-aa95-a8eed53fc762
+2026-02-11 13:19:47,168 - basicLogger - DEBUG - Stored event speeding with a trace id of 62c08be4-c9ce-4bd2-8140-b61bda5ef9f6
+2026-02-11 13:19:47,224 - basicLogger - DEBUG - Stored event speeding with a trace id of 00abd7f0-9521-49e1-90ab-5f4561725960
+2026-02-11 13:19:47,229 - basicLogger - DEBUG - Stored event speeding with a trace id of 18f538bb-03a1-451f-b9d8-375a6dc5b16a
+2026-02-11 13:19:47,229 - basicLogger - DEBUG - Stored event speeding with a trace id of 9f1ed86a-f1f2-4a72-8ceb-327d4a95124e
+2026-02-11 13:19:47,404 - basicLogger - DEBUG - Stored event speeding with a trace id of f2a211e6-45df-4284-b5bb-085c42a95747
+2026-02-11 13:19:48,486 - basicLogger - DEBUG - Stored event speeding with a trace id of 064ae205-6655-41d9-97d7-c94dc60e9bf5
+2026-02-11 13:19:49,505 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:19:39.179909+00:00 to 2026-02-11 21:19:44.211286+00:00
+2026-02-11 13:19:49,511 - basicLogger - DEBUG - Found 16 congestion events
+2026-02-11 13:19:50,088 - basicLogger - DEBUG - Stored event speeding with a trace id of 8750199b-c93d-440c-a19b-d776cdd23d6a
+2026-02-11 13:19:50,156 - basicLogger - DEBUG - Stored event speeding with a trace id of db8a85ab-e6fa-43b7-ba80-b4453f0bd7e5
+2026-02-11 13:19:50,228 - basicLogger - DEBUG - Stored event speeding with a trace id of 353273b5-51fa-41f1-bcf7-27a4713be017
+2026-02-11 13:19:50,228 - basicLogger - DEBUG - Stored event speeding with a trace id of 62c08be4-c9ce-4bd2-8140-b61bda5ef9f6
+2026-02-11 13:19:50,315 - basicLogger - DEBUG - Stored event speeding with a trace id of 9f1ed86a-f1f2-4a72-8ceb-327d4a95124e
+2026-02-11 13:19:50,319 - basicLogger - DEBUG - Stored event speeding with a trace id of 00abd7f0-9521-49e1-90ab-5f4561725960
+2026-02-11 13:19:50,319 - basicLogger - DEBUG - Stored event speeding with a trace id of 18f538bb-03a1-451f-b9d8-375a6dc5b16a
+2026-02-11 13:19:50,319 - basicLogger - DEBUG - Stored event speeding with a trace id of 677448e4-5721-4d0e-99ab-5d59b9637f30
+2026-02-11 13:19:50,322 - basicLogger - DEBUG - Stored event congestion with a trace id of c7a88f9d-1d2c-4987-9b94-e33680e9d360
+2026-02-11 13:19:50,896 - basicLogger - DEBUG - Stored event congestion with a trace id of 97a353cc-8331-491a-b319-c8e557fbdf59
+2026-02-11 13:19:53,111 - basicLogger - DEBUG - Stored event congestion with a trace id of e367921b-2786-4d83-8cc6-1513a1c3fee7
+2026-02-11 13:19:53,236 - basicLogger - DEBUG - Stored event speeding with a trace id of db8a85ab-e6fa-43b7-ba80-b4453f0bd7e5
+2026-02-11 13:19:53,303 - basicLogger - DEBUG - Stored event congestion with a trace id of c8de48c4-7935-4220-b5ab-8818920da2fe
+2026-02-11 13:19:53,342 - basicLogger - DEBUG - Stored event speeding with a trace id of 353273b5-51fa-41f1-bcf7-27a4713be017
+2026-02-11 13:19:53,455 - basicLogger - DEBUG - Stored event congestion with a trace id of b31320f1-7eff-43bf-8a27-6a644c21285a
+2026-02-11 13:19:53,455 - basicLogger - DEBUG - Stored event speeding with a trace id of 677448e4-5721-4d0e-99ab-5d59b9637f30
+2026-02-11 13:19:53,489 - basicLogger - DEBUG - Stored event congestion with a trace id of abacf59d-0ae0-41c0-b98b-b54c42b85f0e
+2026-02-11 13:19:53,490 - basicLogger - DEBUG - Stored event congestion with a trace id of 4cc49bbd-5d1c-48d5-82c2-f9b1f26f91ef
+2026-02-11 13:19:53,491 - basicLogger - DEBUG - Stored event congestion with a trace id of c7a88f9d-1d2c-4987-9b94-e33680e9d360
+2026-02-11 13:19:53,630 - basicLogger - DEBUG - Stored event congestion with a trace id of 97a353cc-8331-491a-b319-c8e557fbdf59
+2026-02-11 13:19:55,800 - basicLogger - DEBUG - Stored event congestion with a trace id of e367921b-2786-4d83-8cc6-1513a1c3fee7
+2026-02-11 13:19:56,269 - basicLogger - DEBUG - Stored event congestion with a trace id of f3ff6b4e-0254-401d-80f4-55dc306b3de2
+2026-02-11 13:19:56,334 - basicLogger - DEBUG - Stored event congestion with a trace id of c8de48c4-7935-4220-b5ab-8818920da2fe
+2026-02-11 13:19:56,432 - basicLogger - DEBUG - Stored event congestion with a trace id of 6f2eef53-ea46-4cf6-a8ef-1743c7603b0d
+2026-02-11 13:19:56,517 - basicLogger - DEBUG - Stored event congestion with a trace id of 7ccf7853-22b0-4d19-ab24-e22e5df152d0
+2026-02-11 13:19:56,520 - basicLogger - DEBUG - Stored event congestion with a trace id of abacf59d-0ae0-41c0-b98b-b54c42b85f0e
+2026-02-11 13:19:56,520 - basicLogger - DEBUG - Stored event congestion with a trace id of b31320f1-7eff-43bf-8a27-6a644c21285a
+2026-02-11 13:19:56,546 - basicLogger - DEBUG - Stored event congestion with a trace id of 4cc49bbd-5d1c-48d5-82c2-f9b1f26f91ef
+2026-02-11 13:19:56,554 - basicLogger - DEBUG - Stored event speeding with a trace id of 4594ef0b-4946-4507-89d0-dadbc18e62dc
+2026-02-11 13:19:56,576 - basicLogger - DEBUG - Stored event speeding with a trace id of 9ac295d8-a707-4622-939c-efa6cbdf7b89
+2026-02-11 13:19:56,688 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:19:44.211286+00:00 to 2026-02-11 21:19:54.172282+00:00
+2026-02-11 13:19:56,692 - basicLogger - DEBUG - Found 19 speeding events
+2026-02-11 13:19:58,257 - basicLogger - DEBUG - Stored event speeding with a trace id of 7b64974e-3332-4a77-a9a3-9a15d6096447
+2026-02-11 13:19:59,129 - basicLogger - DEBUG - Stored event congestion with a trace id of f3ff6b4e-0254-401d-80f4-55dc306b3de2
+2026-02-11 13:19:59,299 - basicLogger - DEBUG - Stored event speeding with a trace id of 48ea9119-6467-4751-b3b7-2d5e4460505f
+2026-02-11 13:19:59,475 - basicLogger - DEBUG - Stored event congestion with a trace id of 6f2eef53-ea46-4cf6-a8ef-1743c7603b0d
+2026-02-11 13:19:59,475 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:19:44.211286+00:00 to 2026-02-11 21:19:54.172282+00:00
+2026-02-11 13:19:59,491 - basicLogger - DEBUG - Found 12 congestion events
+2026-02-11 13:19:59,571 - basicLogger - DEBUG - Stored event congestion with a trace id of 7ccf7853-22b0-4d19-ab24-e22e5df152d0
+2026-02-11 13:19:59,593 - basicLogger - DEBUG - Stored event speeding with a trace id of ffd0fbaf-92f1-4e0e-8d88-1ca9ea448a9c
+2026-02-11 13:19:59,601 - basicLogger - DEBUG - Stored event speeding with a trace id of 77c8366c-ecf0-4fef-878a-b63a829ac922
+2026-02-11 13:19:59,615 - basicLogger - DEBUG - Stored event speeding with a trace id of 1a97d224-28bd-44d0-a97d-d15ea002c9cb
+2026-02-11 13:19:59,625 - basicLogger - DEBUG - Stored event speeding with a trace id of 9ac295d8-a707-4622-939c-efa6cbdf7b89
+2026-02-11 13:19:59,626 - basicLogger - DEBUG - Stored event speeding with a trace id of 4594ef0b-4946-4507-89d0-dadbc18e62dc
+2026-02-11 13:20:01,377 - basicLogger - DEBUG - Stored event speeding with a trace id of 7b64974e-3332-4a77-a9a3-9a15d6096447
+2026-02-11 13:20:04,440 - basicLogger - DEBUG - Stored event speeding with a trace id of 8e632cc7-c3ae-4a6b-aa48-8996b9e23114
+2026-02-11 13:20:04,803 - basicLogger - DEBUG - Stored event speeding with a trace id of 48ea9119-6467-4751-b3b7-2d5e4460505f
+2026-02-11 13:20:05,208 - basicLogger - DEBUG - Stored event speeding with a trace id of 67c9e708-c3c9-45a2-bd9c-74495d1e666c
+2026-02-11 13:20:05,309 - basicLogger - DEBUG - Stored event speeding with a trace id of 77c8366c-ecf0-4fef-878a-b63a829ac922
+2026-02-11 13:20:05,346 - basicLogger - DEBUG - Stored event speeding with a trace id of ffd0fbaf-92f1-4e0e-8d88-1ca9ea448a9c
+2026-02-11 13:20:05,360 - basicLogger - DEBUG - Stored event speeding with a trace id of 1a97d224-28bd-44d0-a97d-d15ea002c9cb
+2026-02-11 13:20:05,449 - basicLogger - DEBUG - Stored event congestion with a trace id of 745bf920-678f-410c-8c32-3cbfaa80c809
+2026-02-11 13:20:05,472 - basicLogger - DEBUG - Stored event speeding with a trace id of 0338e121-0d78-4532-8ca5-f9f928ae469f
+2026-02-11 13:20:05,472 - basicLogger - DEBUG - Stored event congestion with a trace id of 93cab795-e2e2-47b6-9273-cc7d16a10074
+2026-02-11 13:20:06,069 - basicLogger - DEBUG - Stored event congestion with a trace id of 57a4ede5-0551-436a-8d92-32f3616a6ba9
+2026-02-11 13:20:07,969 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:19:54.172282+00:00 to 2026-02-11 21:20:04.181659+00:00
+2026-02-11 13:20:07,988 - basicLogger - DEBUG - Found 12 speeding events
+2026-02-11 13:20:08,878 - basicLogger - DEBUG - Stored event speeding with a trace id of 8e632cc7-c3ae-4a6b-aa48-8996b9e23114
+2026-02-11 13:20:09,769 - basicLogger - DEBUG - Stored event congestion with a trace id of 121849a8-852c-4c77-9000-90250b82c92d
+2026-02-11 13:20:10,499 - basicLogger - DEBUG - Stored event speeding with a trace id of 67c9e708-c3c9-45a2-bd9c-74495d1e666c
+2026-02-11 13:20:10,643 - basicLogger - DEBUG - Stored event congestion with a trace id of f2165c32-2ce0-43c4-afe1-fe68444a2d32
+2026-02-11 13:20:10,737 - basicLogger - DEBUG - Stored event congestion with a trace id of dfb160e1-27b2-49c3-8583-0eec66b89263
+2026-02-11 13:20:10,745 - basicLogger - DEBUG - Stored event congestion with a trace id of 3f348344-7a61-4d8b-af44-a0d933b7e701
+2026-02-11 13:20:10,759 - basicLogger - DEBUG - Stored event congestion with a trace id of 93cab795-e2e2-47b6-9273-cc7d16a10074
+2026-02-11 13:20:10,792 - basicLogger - DEBUG - Stored event speeding with a trace id of 0338e121-0d78-4532-8ca5-f9f928ae469f
+2026-02-11 13:20:10,816 - basicLogger - DEBUG - Stored event congestion with a trace id of 745bf920-678f-410c-8c32-3cbfaa80c809
+2026-02-11 13:20:11,107 - basicLogger - DEBUG - Stored event congestion with a trace id of 57a4ede5-0551-436a-8d92-32f3616a6ba9
+2026-02-11 13:20:11,923 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:19:54.172282+00:00 to 2026-02-11 21:20:04.181659+00:00
+2026-02-11 13:20:11,947 - basicLogger - DEBUG - Found 11 congestion events
+2026-02-11 13:20:12,781 - basicLogger - DEBUG - Stored event congestion with a trace id of 82aba85a-1610-4589-b3dd-f90b66825795
+2026-02-11 13:20:14,230 - basicLogger - DEBUG - Stored event congestion with a trace id of 121849a8-852c-4c77-9000-90250b82c92d
+2026-02-11 13:20:15,434 - basicLogger - DEBUG - Stored event congestion with a trace id of 51e0b312-8a08-4148-b556-1a24ff8b936a
+2026-02-11 13:20:15,584 - basicLogger - DEBUG - Stored event congestion with a trace id of f2165c32-2ce0-43c4-afe1-fe68444a2d32
+2026-02-11 13:20:15,741 - basicLogger - DEBUG - Stored event congestion with a trace id of dfb160e1-27b2-49c3-8583-0eec66b89263
+2026-02-11 13:20:15,774 - basicLogger - DEBUG - Stored event congestion with a trace id of 3f348344-7a61-4d8b-af44-a0d933b7e701
+2026-02-11 13:20:15,798 - basicLogger - DEBUG - Stored event speeding with a trace id of 5fd5f7f2-eb32-41f5-8865-bd56d2e351e0
+2026-02-11 13:20:15,905 - basicLogger - DEBUG - Stored event congestion with a trace id of e8c85a1d-6133-404d-a267-b77b38565c4b
+2026-02-11 13:20:15,917 - basicLogger - DEBUG - Stored event speeding with a trace id of 975e9744-8d83-4b12-b4db-a9a5beea1904
+2026-02-11 13:20:16,090 - basicLogger - DEBUG - Stored event speeding with a trace id of 6dcd7fc4-cca5-49da-862b-c5fda56f21df
+2026-02-11 13:20:17,026 - basicLogger - DEBUG - Stored event congestion with a trace id of 82aba85a-1610-4589-b3dd-f90b66825795
+2026-02-11 13:20:17,919 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:04.181659+00:00 to 2026-02-11 21:20:14.178085+00:00
+2026-02-11 13:20:17,932 - basicLogger - DEBUG - Found 8 speeding events
+2026-02-11 13:20:18,307 - basicLogger - DEBUG - Stored event speeding with a trace id of ce2aeda9-f498-4b15-ad57-0a9c016c827f
+2026-02-11 13:20:20,429 - basicLogger - DEBUG - Stored event congestion with a trace id of 51e0b312-8a08-4148-b556-1a24ff8b936a
+2026-02-11 13:20:20,700 - basicLogger - DEBUG - Stored event speeding with a trace id of bdfbbad2-a3cd-41a9-992b-ec2619d2a4d0
+2026-02-11 13:20:20,926 - basicLogger - DEBUG - Stored event speeding with a trace id of 42dde186-bfd4-40d2-b5b0-dd56768dbae5
+2026-02-11 13:20:20,949 - basicLogger - DEBUG - Stored event speeding with a trace id of 4ccc0a30-c63e-4aca-990b-c161a5aaffac
+2026-02-11 13:20:20,972 - basicLogger - DEBUG - Stored event speeding with a trace id of 5fd5f7f2-eb32-41f5-8865-bd56d2e351e0
+2026-02-11 13:20:21,097 - basicLogger - DEBUG - Stored event congestion with a trace id of e8c85a1d-6133-404d-a267-b77b38565c4b
+2026-02-11 13:20:21,116 - basicLogger - DEBUG - Stored event speeding with a trace id of 975e9744-8d83-4b12-b4db-a9a5beea1904
+2026-02-11 13:20:21,121 - basicLogger - DEBUG - Stored event speeding with a trace id of 6dcd7fc4-cca5-49da-862b-c5fda56f21df
+2026-02-11 13:20:22,013 - basicLogger - DEBUG - Stored event speeding with a trace id of 725a7aed-2e3e-499c-9035-0bbe2c5c4da6
+2026-02-11 13:20:22,192 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:04.181659+00:00 to 2026-02-11 21:20:14.178085+00:00
+2026-02-11 13:20:22,206 - basicLogger - DEBUG - Found 12 congestion events
+2026-02-11 13:20:22,568 - basicLogger - DEBUG - Stored event speeding with a trace id of ce2aeda9-f498-4b15-ad57-0a9c016c827f
+2026-02-11 13:20:24,964 - basicLogger - DEBUG - Stored event speeding with a trace id of abfcb059-06d5-4f48-9e19-a623ea0f1906
+2026-02-11 13:20:25,603 - basicLogger - DEBUG - Stored event speeding with a trace id of bdfbbad2-a3cd-41a9-992b-ec2619d2a4d0
+2026-02-11 13:20:25,901 - basicLogger - DEBUG - Stored event speeding with a trace id of 4ccc0a30-c63e-4aca-990b-c161a5aaffac
+2026-02-11 13:20:25,916 - basicLogger - DEBUG - Stored event speeding with a trace id of 42dde186-bfd4-40d2-b5b0-dd56768dbae5
+2026-02-11 13:20:26,001 - basicLogger - DEBUG - Stored event congestion with a trace id of d575c863-c820-4348-b0e8-84ff3fafa5ef
+2026-02-11 13:20:26,080 - basicLogger - DEBUG - Stored event congestion with a trace id of b39636d6-371d-4a28-a5f0-e36221e76f38
+2026-02-11 13:20:26,090 - basicLogger - DEBUG - Stored event speeding with a trace id of e9bb5f2f-f87d-4993-8a8b-d7d84aad639a
+2026-02-11 13:20:26,132 - basicLogger - DEBUG - Stored event congestion with a trace id of 2803d94f-2ed4-414a-8d7c-cda669409f06
+2026-02-11 13:20:26,700 - basicLogger - DEBUG - Stored event speeding with a trace id of 725a7aed-2e3e-499c-9035-0bbe2c5c4da6
+2026-02-11 13:20:27,001 - basicLogger - DEBUG - Stored event congestion with a trace id of 26f7a802-0e0e-43dd-ae91-d38816ddea79
+2026-02-11 13:20:27,843 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:14.178085+00:00 to 2026-02-11 21:20:24.173712+00:00
+2026-02-11 13:20:27,869 - basicLogger - DEBUG - Found 13 speeding events
+2026-02-11 13:20:29,071 - basicLogger - DEBUG - Stored event speeding with a trace id of abfcb059-06d5-4f48-9e19-a623ea0f1906
+2026-02-11 13:20:30,458 - basicLogger - DEBUG - Stored event congestion with a trace id of 4c25d48c-5a14-45b7-b1e8-5070f3e6ddbe
+2026-02-11 13:20:31,038 - basicLogger - DEBUG - Stored event congestion with a trace id of 290f1871-d5da-48ca-a0a5-e7a158e201e0
+2026-02-11 13:20:31,110 - basicLogger - DEBUG - Stored event congestion with a trace id of f641f549-fcc0-4bcb-b5db-98ff4a8092b3
+2026-02-11 13:20:31,172 - basicLogger - DEBUG - Stored event congestion with a trace id of d575c863-c820-4348-b0e8-84ff3fafa5ef
+2026-02-11 13:20:31,262 - basicLogger - DEBUG - Stored event congestion with a trace id of b39636d6-371d-4a28-a5f0-e36221e76f38
+2026-02-11 13:20:31,311 - basicLogger - DEBUG - Stored event speeding with a trace id of e9bb5f2f-f87d-4993-8a8b-d7d84aad639a
+2026-02-11 13:20:31,356 - basicLogger - DEBUG - Stored event congestion with a trace id of 2803d94f-2ed4-414a-8d7c-cda669409f06
+2026-02-11 13:20:31,730 - basicLogger - DEBUG - Stored event congestion with a trace id of 902cdd84-1c8c-4fe6-ab19-70d74e9a8218
+2026-02-11 13:20:31,949 - basicLogger - DEBUG - Stored event congestion with a trace id of 26f7a802-0e0e-43dd-ae91-d38816ddea79
+2026-02-11 13:20:32,059 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:14.178085+00:00 to 2026-02-11 21:20:24.173712+00:00
+2026-02-11 13:20:32,077 - basicLogger - DEBUG - Found 8 congestion events
+2026-02-11 13:20:32,901 - basicLogger - DEBUG - Stored event congestion with a trace id of f545c6c1-10d1-40d2-b214-65c8951417cd
+2026-02-11 13:20:34,741 - basicLogger - DEBUG - Stored event congestion with a trace id of 4c25d48c-5a14-45b7-b1e8-5070f3e6ddbe
+2026-02-11 13:20:35,553 - basicLogger - DEBUG - Stored event congestion with a trace id of 290f1871-d5da-48ca-a0a5-e7a158e201e0
+2026-02-11 13:20:35,616 - basicLogger - DEBUG - Stored event congestion with a trace id of f641f549-fcc0-4bcb-b5db-98ff4a8092b3
+2026-02-11 13:20:35,820 - basicLogger - DEBUG - Stored event congestion with a trace id of 43d70b52-33dd-453e-b0b9-2244c9e3442c
+2026-02-11 13:20:36,069 - basicLogger - DEBUG - Stored event congestion with a trace id of 902cdd84-1c8c-4fe6-ab19-70d74e9a8218
+2026-02-11 13:20:36,748 - basicLogger - DEBUG - Stored event congestion with a trace id of f545c6c1-10d1-40d2-b214-65c8951417cd
+2026-02-11 13:20:37,277 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:24.173712+00:00 to 2026-02-11 21:20:34.175018+00:00
+2026-02-11 13:20:37,291 - basicLogger - DEBUG - Found 7 speeding events
+2026-02-11 13:20:39,172 - basicLogger - DEBUG - Stored event congestion with a trace id of 43d70b52-33dd-453e-b0b9-2244c9e3442c
+2026-02-11 13:20:40,685 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:24.173712+00:00 to 2026-02-11 21:20:34.175018+00:00
+2026-02-11 13:20:40,709 - basicLogger - DEBUG - Found 14 congestion events
+2026-02-11 13:20:46,776 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:34.175018+00:00 to 2026-02-11 21:20:44.177354+00:00
+2026-02-11 13:20:46,779 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:20:49,237 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:34.175018+00:00 to 2026-02-11 21:20:44.177354+00:00
+2026-02-11 13:20:49,242 - basicLogger - DEBUG - Found 6 congestion events
+2026-02-11 13:20:56,643 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:44.177354+00:00 to 2026-02-11 21:20:54.192160+00:00
+2026-02-11 13:20:56,645 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:20:59,099 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:44.177354+00:00 to 2026-02-11 21:20:54.192160+00:00
+2026-02-11 13:20:59,105 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:21:01,962 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:54.192160+00:00 to 2026-02-11 21:20:59.212147+00:00
+2026-02-11 13:21:01,967 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:21:04,779 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:54.192160+00:00 to 2026-02-11 21:20:59.212147+00:00
+2026-02-11 13:21:04,790 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:21:11,923 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:20:59.212147+00:00 to 2026-02-11 21:21:09.188254+00:00
+2026-02-11 13:21:11,927 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:21:14,702 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:20:59.212147+00:00 to 2026-02-11 21:21:09.188254+00:00
+2026-02-11 13:21:14,708 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:21:21,866 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:21:09.188254+00:00 to 2026-02-11 21:21:19.180222+00:00
+2026-02-11 13:21:21,870 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:21:24,771 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:21:09.188254+00:00 to 2026-02-11 21:21:19.180222+00:00
+2026-02-11 13:21:24,781 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:21:31,893 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:21:19.180222+00:00 to 2026-02-11 21:21:29.184378+00:00
+2026-02-11 13:21:31,902 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:21:34,689 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:21:19.180222+00:00 to 2026-02-11 21:21:29.184378+00:00
+2026-02-11 13:21:34,689 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:21:41,900 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:21:29.184378+00:00 to 2026-02-11 21:21:39.174771+00:00
+2026-02-11 13:21:41,905 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:21:44,712 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:21:29.184378+00:00 to 2026-02-11 21:21:39.174771+00:00
+2026-02-11 13:21:44,717 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:21:51,947 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:21:39.174771+00:00 to 2026-02-11 21:21:49.179174+00:00
+2026-02-11 13:21:51,951 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:21:54,860 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:21:39.174771+00:00 to 2026-02-11 21:21:49.179174+00:00
+2026-02-11 13:21:54,862 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:22:02,572 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:21:49.179174+00:00 to 2026-02-11 21:21:59.176544+00:00
+2026-02-11 13:22:02,580 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:22:06,003 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:21:49.179174+00:00 to 2026-02-11 21:21:59.176544+00:00
+2026-02-11 13:22:06,003 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:22:12,563 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:21:59.176544+00:00 to 2026-02-11 21:22:09.177822+00:00
+2026-02-11 13:22:12,566 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:22:15,286 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:21:59.176544+00:00 to 2026-02-11 21:22:09.177822+00:00
+2026-02-11 13:22:15,294 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:22:22,516 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:22:09.177822+00:00 to 2026-02-11 21:22:19.178388+00:00
+2026-02-11 13:22:22,523 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:22:25,661 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:22:09.177822+00:00 to 2026-02-11 21:22:19.178388+00:00
+2026-02-11 13:22:25,681 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:22:32,332 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:22:19.178388+00:00 to 2026-02-11 21:22:29.186208+00:00
+2026-02-11 13:22:32,343 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:22:35,444 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:22:19.178388+00:00 to 2026-02-11 21:22:29.186208+00:00
+2026-02-11 13:22:35,455 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:22:41,923 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:22:29.186208+00:00 to 2026-02-11 21:22:39.177800+00:00
+2026-02-11 13:22:41,924 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:22:44,639 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:22:29.186208+00:00 to 2026-02-11 21:22:39.177800+00:00
+2026-02-11 13:22:44,655 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:22:52,521 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:22:39.177800+00:00 to 2026-02-11 21:22:49.174598+00:00
+2026-02-11 13:22:52,521 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:22:55,881 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:22:39.177800+00:00 to 2026-02-11 21:22:49.174598+00:00
+2026-02-11 13:22:55,881 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:23:02,373 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:22:49.174598+00:00 to 2026-02-11 21:22:59.176168+00:00
+2026-02-11 13:23:02,383 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:23:05,506 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:22:49.174598+00:00 to 2026-02-11 21:22:59.176168+00:00
+2026-02-11 13:23:05,519 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:23:12,360 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:22:59.176168+00:00 to 2026-02-11 21:23:09.182817+00:00
+2026-02-11 13:23:12,363 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:23:15,120 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:22:59.176168+00:00 to 2026-02-11 21:23:09.182817+00:00
+2026-02-11 13:23:15,131 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:23:22,525 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:23:09.182817+00:00 to 2026-02-11 21:23:19.177495+00:00
+2026-02-11 13:23:22,534 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:23:25,356 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:23:09.182817+00:00 to 2026-02-11 21:23:19.177495+00:00
+2026-02-11 13:23:25,369 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:23:31,744 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:23:19.177495+00:00 to 2026-02-11 21:23:29.176211+00:00
+2026-02-11 13:23:31,751 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:23:34,300 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:23:19.177495+00:00 to 2026-02-11 21:23:29.176211+00:00
+2026-02-11 13:23:34,311 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:23:42,515 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:23:29.176211+00:00 to 2026-02-11 21:23:39.187676+00:00
+2026-02-11 13:23:42,518 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:23:45,347 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:23:29.176211+00:00 to 2026-02-11 21:23:39.187676+00:00
+2026-02-11 13:23:45,360 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:23:52,497 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:23:39.187676+00:00 to 2026-02-11 21:23:49.172660+00:00
+2026-02-11 13:23:52,507 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:23:55,283 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:23:39.187676+00:00 to 2026-02-11 21:23:49.172660+00:00
+2026-02-11 13:23:55,293 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:24:02,500 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:23:49.172660+00:00 to 2026-02-11 21:23:59.178384+00:00
+2026-02-11 13:24:02,513 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:24:05,354 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:23:49.172660+00:00 to 2026-02-11 21:23:59.178384+00:00
+2026-02-11 13:24:05,365 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:24:12,552 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:23:59.178384+00:00 to 2026-02-11 21:24:09.181856+00:00
+2026-02-11 13:24:12,559 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:24:15,332 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:23:59.178384+00:00 to 2026-02-11 21:24:09.181856+00:00
+2026-02-11 13:24:15,344 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:24:22,481 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:24:09.181856+00:00 to 2026-02-11 21:24:19.174417+00:00
+2026-02-11 13:24:22,495 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:24:25,852 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:24:09.181856+00:00 to 2026-02-11 21:24:19.174417+00:00
+2026-02-11 13:24:25,864 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:24:32,496 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:24:19.174417+00:00 to 2026-02-11 21:24:29.185962+00:00
+2026-02-11 13:24:32,507 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:24:35,538 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:24:19.174417+00:00 to 2026-02-11 21:24:29.185962+00:00
+2026-02-11 13:24:35,553 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:24:42,478 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:24:29.185962+00:00 to 2026-02-11 21:24:39.177702+00:00
+2026-02-11 13:24:42,484 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:24:45,237 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:24:29.185962+00:00 to 2026-02-11 21:24:39.177702+00:00
+2026-02-11 13:24:45,241 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:24:51,909 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:24:39.177702+00:00 to 2026-02-11 21:24:49.185466+00:00
+2026-02-11 13:24:51,921 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:24:55,292 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:24:39.177702+00:00 to 2026-02-11 21:24:49.185466+00:00
+2026-02-11 13:24:55,303 - basicLogger - DEBUG - Found 0 congestion events
+2026-02-11 13:25:02,534 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:24:49.185466+00:00 to 2026-02-11 21:24:59.172021+00:00
+2026-02-11 13:25:02,536 - basicLogger - DEBUG - Found 0 speeding events
+2026-02-11 13:25:05,478 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:24:49.185466+00:00 to 2026-02-11 21:24:59.172021+00:00
+2026-02-11 13:25:12,527 - basicLogger - DEBUG - Query speeding: 2026-02-11 21:24:59.172021+00:00 to 2026-02-11 21:25:09.187145+00:00
+2026-02-11 13:25:20,167 - basicLogger - DEBUG - Query congestion: 2026-02-11 21:24:59.172021+00:00 to 2026-02-11 21:25:09.187145+00:00

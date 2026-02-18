@@ -1,0 +1,244 @@
+2026-02-11 13:17:49,179 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:17:52,352 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:17:54,779 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:17:54,786 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 0, 'min_speed_kmh': None, 'max_speed_kmh': None, 'num_congestion_events': 0, 'max_vehicles_passing': None, 'last_updated': '2026-02-11T21:17:49.183889Z'}
+2026-02-11 13:17:54,786 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:17:59,183 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:01,616 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:18:04,103 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:18:04,106 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 0, 'min_speed_kmh': None, 'max_speed_kmh': None, 'num_congestion_events': 0, 'max_vehicles_passing': None, 'last_updated': '2026-02-11T21:17:59.204325Z'}
+2026-02-11 13:18:04,106 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:04,183 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:06,712 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:18:09,868 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:18:09,871 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 0, 'min_speed_kmh': None, 'max_speed_kmh': None, 'num_congestion_events': 0, 'max_vehicles_passing': None, 'last_updated': '2026-02-11T21:18:04.205727Z'}
+2026-02-11 13:18:09,871 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:14,175 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:16,916 - basicLogger - INFO - Received 10 speeding events
+2026-02-11 13:18:20,183 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:18:20,184 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 10, 'min_speed_kmh': 33.0, 'max_speed_kmh': 89.0, 'num_congestion_events': 0, 'max_vehicles_passing': None, 'last_updated': '2026-02-11T21:18:14.178045Z'}
+2026-02-11 13:18:20,185 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:24,180 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:26,912 - basicLogger - INFO - Received 10 speeding events
+2026-02-11 13:18:29,627 - basicLogger - INFO - Received 20 congestion events
+2026-02-11 13:18:29,630 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 20, 'min_speed_kmh': 32.0, 'max_speed_kmh': 89.0, 'num_congestion_events': 20, 'max_vehicles_passing': 116, 'last_updated': '2026-02-11T21:18:24.180045Z'}
+2026-02-11 13:18:29,630 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:34,178 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:36,628 - basicLogger - INFO - Received 20 speeding events
+2026-02-11 13:18:39,316 - basicLogger - INFO - Received 10 congestion events
+2026-02-11 13:18:39,318 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 40, 'min_speed_kmh': 32.0, 'max_speed_kmh': 89.0, 'num_congestion_events': 30, 'max_vehicles_passing': 116, 'last_updated': '2026-02-11T21:18:34.180481Z'}
+2026-02-11 13:18:39,319 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:44,176 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:46,619 - basicLogger - INFO - Received 20 speeding events
+2026-02-11 13:18:49,034 - basicLogger - INFO - Received 13 congestion events
+2026-02-11 13:18:49,035 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 60, 'min_speed_kmh': 32.0, 'max_speed_kmh': 89.0, 'num_congestion_events': 43, 'max_vehicles_passing': 116, 'last_updated': '2026-02-11T21:18:44.177626Z'}
+2026-02-11 13:18:49,035 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:49,186 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:18:51,681 - basicLogger - INFO - Received 3 speeding events
+2026-02-11 13:18:54,502 - basicLogger - INFO - Received 17 congestion events
+2026-02-11 13:18:54,504 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 63, 'min_speed_kmh': 32.0, 'max_speed_kmh': 89.0, 'num_congestion_events': 60, 'max_vehicles_passing': 116, 'last_updated': '2026-02-11T21:18:49.187637Z'}
+2026-02-11 13:18:54,504 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:18:59,176 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:01,687 - basicLogger - INFO - Received 17 speeding events
+2026-02-11 13:19:05,467 - basicLogger - INFO - Received 13 congestion events
+2026-02-11 13:19:05,472 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 80, 'min_speed_kmh': 31.0, 'max_speed_kmh': 89.0, 'num_congestion_events': 73, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:18:59.176402Z'}
+2026-02-11 13:19:05,472 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:19:09,178 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:13,333 - basicLogger - INFO - Received 20 speeding events
+2026-02-11 13:19:17,079 - basicLogger - INFO - Received 10 congestion events
+2026-02-11 13:19:17,084 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 100, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 83, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:19:09.180658Z'}
+2026-02-11 13:19:17,084 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:19:19,184 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:23,382 - basicLogger - INFO - Received 3 speeding events
+2026-02-11 13:19:27,350 - basicLogger - INFO - Received 17 congestion events
+2026-02-11 13:19:27,352 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 103, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 100, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:19:19.184973Z'}
+2026-02-11 13:19:27,352 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:19:29,186 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:31,823 - basicLogger - INFO - Received 17 speeding events
+2026-02-11 13:19:34,594 - basicLogger - INFO - Received 6 congestion events
+2026-02-11 13:19:34,594 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 120, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 106, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:19:29.186652Z'}
+2026-02-11 13:19:34,594 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:19:39,179 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:41,559 - basicLogger - INFO - Received 17 speeding events
+2026-02-11 13:19:44,148 - basicLogger - INFO - Received 15 congestion events
+2026-02-11 13:19:44,151 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 137, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 121, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:19:39.179909Z'}
+2026-02-11 13:19:44,153 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:19:44,185 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:46,951 - basicLogger - INFO - Received 4 speeding events
+2026-02-11 13:19:49,523 - basicLogger - INFO - Received 16 congestion events
+2026-02-11 13:19:49,523 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 141, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 137, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:19:44.211286Z'}
+2026-02-11 13:19:49,523 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:19:54,171 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:19:56,703 - basicLogger - INFO - Received 19 speeding events
+2026-02-11 13:19:59,515 - basicLogger - INFO - Received 12 congestion events
+2026-02-11 13:19:59,520 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 160, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 149, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:19:54.172282Z'}
+2026-02-11 13:19:59,520 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:04,181 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:20:08,026 - basicLogger - INFO - Received 12 speeding events
+2026-02-11 13:20:11,987 - basicLogger - INFO - Received 11 congestion events
+2026-02-11 13:20:11,995 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 172, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 160, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:04.181659Z'}
+2026-02-11 13:20:11,995 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:14,178 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:20:17,968 - basicLogger - INFO - Received 8 speeding events
+2026-02-11 13:20:22,251 - basicLogger - INFO - Received 12 congestion events
+2026-02-11 13:20:22,261 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 180, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 172, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:14.178085Z'}
+2026-02-11 13:20:22,261 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:24,173 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:20:27,919 - basicLogger - INFO - Received 13 speeding events
+2026-02-11 13:20:32,109 - basicLogger - INFO - Received 8 congestion events
+2026-02-11 13:20:32,116 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 193, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 180, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:24.173712Z'}
+2026-02-11 13:20:32,118 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:34,175 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:20:37,309 - basicLogger - INFO - Received 7 speeding events
+2026-02-11 13:20:40,742 - basicLogger - INFO - Received 14 congestion events
+2026-02-11 13:20:40,751 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 194, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:34.175018Z'}
+2026-02-11 13:20:40,758 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:44,175 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:20:46,793 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:20:49,254 - basicLogger - INFO - Received 6 congestion events
+2026-02-11 13:20:49,254 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:44.177354Z'}
+2026-02-11 13:20:49,259 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:54,192 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:20:56,656 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:20:59,116 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:20:59,116 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:54.192160Z'}
+2026-02-11 13:20:59,116 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:20:59,186 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:21:01,981 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:21:04,803 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:21:04,806 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:20:59.212147Z'}
+2026-02-11 13:21:04,806 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:21:09,188 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:21:11,935 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:21:14,714 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:21:14,714 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:09.188254Z'}
+2026-02-11 13:21:14,721 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:21:19,180 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:21:21,885 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:21:24,792 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:21:24,795 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:19.180222Z'}
+2026-02-11 13:21:24,795 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:21:29,184 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:21:31,913 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:21:34,707 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:21:34,709 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:29.184378Z'}
+2026-02-11 13:21:34,709 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:21:39,172 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:21:41,913 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:21:44,730 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:21:44,732 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:39.174771Z'}
+2026-02-11 13:21:44,732 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:21:49,179 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:21:51,957 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:21:54,874 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:21:54,877 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:49.179174Z'}
+2026-02-11 13:21:54,877 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:21:59,175 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:22:01,500 - basicLogger - INFO - Stats request received
+2026-02-11 13:22:01,501 - basicLogger - DEBUG - Stats content: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:49.179174Z'}
+2026-02-11 13:22:01,501 - basicLogger - INFO - Stats request completed
+2026-02-11 13:22:02,597 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:22:06,023 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:22:06,031 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:21:59.176544Z'}
+2026-02-11 13:22:06,031 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:22:09,175 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:22:12,577 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:22:15,310 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:22:15,319 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:22:09.177822Z'}
+2026-02-11 13:22:15,319 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:22:19,178 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:22:22,543 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:22:25,697 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:22:25,702 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:22:19.178388Z'}
+2026-02-11 13:22:25,705 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:22:29,183 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:22:32,353 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:22:35,471 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:22:35,475 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:22:29.186208Z'}
+2026-02-11 13:22:35,475 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:22:39,177 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:22:41,933 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:22:44,670 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:22:44,681 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:22:39.177800Z'}
+2026-02-11 13:22:44,681 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:22:49,174 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:22:52,543 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:22:55,902 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:22:55,906 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:22:49.174598Z'}
+2026-02-11 13:22:55,906 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:22:59,176 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:23:02,404 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:23:05,537 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:23:05,539 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:22:59.176168Z'}
+2026-02-11 13:23:05,539 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:23:09,180 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:23:12,374 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:23:15,149 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:23:15,152 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:09.182817Z'}
+2026-02-11 13:23:15,152 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:23:19,174 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:23:22,546 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:23:24,819 - basicLogger - INFO - Stats request received
+2026-02-11 13:23:24,825 - basicLogger - DEBUG - Stats content: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:09.182817Z'}
+2026-02-11 13:23:24,825 - basicLogger - INFO - Stats request completed
+2026-02-11 13:23:25,383 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:23:25,394 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:19.177495Z'}
+2026-02-11 13:23:25,394 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:23:29,176 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:23:31,762 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:23:34,329 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:23:34,329 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:29.176211Z'}
+2026-02-11 13:23:34,329 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:23:35,976 - basicLogger - INFO - Stats request received
+2026-02-11 13:23:35,976 - basicLogger - DEBUG - Stats content: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:29.176211Z'}
+2026-02-11 13:23:35,976 - basicLogger - INFO - Stats request completed
+2026-02-11 13:23:39,187 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:23:42,530 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:23:45,376 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:23:45,379 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:39.187676Z'}
+2026-02-11 13:23:45,379 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:23:49,172 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:23:52,521 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:23:55,312 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:23:55,315 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:49.172660Z'}
+2026-02-11 13:23:55,315 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:23:59,178 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:24:02,529 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:24:05,386 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:24:05,392 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:23:59.178384Z'}
+2026-02-11 13:24:05,392 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:24:09,178 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:24:12,567 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:24:15,358 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:24:15,368 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:24:09.181856Z'}
+2026-02-11 13:24:15,370 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:24:19,174 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:24:22,513 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:24:25,873 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:24:25,873 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:24:19.174417Z'}
+2026-02-11 13:24:25,873 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:24:29,185 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:24:32,528 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:24:35,570 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:24:35,572 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:24:29.185962Z'}
+2026-02-11 13:24:35,575 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:24:39,177 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:24:42,495 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:24:45,249 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:24:45,249 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:24:39.177702Z'}
+2026-02-11 13:24:45,256 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:24:49,185 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:24:51,937 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:24:55,322 - basicLogger - INFO - Received 0 congestion events
+2026-02-11 13:24:55,325 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:24:49.185466Z'}
+2026-02-11 13:24:55,325 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:24:59,172 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:25:02,577 - basicLogger - INFO - Received 0 speeding events
+2026-02-11 13:25:05,604 - basicLogger - ERROR - Congestion GET failed with status 500
+2026-02-11 13:25:05,604 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:24:59.172021Z'}
+2026-02-11 13:25:05,604 - basicLogger - INFO - Periodic processing ended
+2026-02-11 13:25:09,187 - basicLogger - INFO - Periodic processing started
+2026-02-11 13:25:16,801 - basicLogger - ERROR - Speeding GET failed with status 500
+2026-02-11 13:25:24,286 - basicLogger - ERROR - Congestion GET failed with status 500
+2026-02-11 13:25:24,286 - basicLogger - DEBUG - Updated stats: {'num_speeding_events': 200, 'min_speed_kmh': 31.0, 'max_speed_kmh': 90.0, 'num_congestion_events': 200, 'max_vehicles_passing': 120, 'last_updated': '2026-02-11T21:25:09.187145Z'}
+2026-02-11 13:25:24,288 - basicLogger - INFO - Periodic processing ended

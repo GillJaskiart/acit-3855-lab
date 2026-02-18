@@ -1,0 +1,144 @@
+openapi: 3.0.3
+info:
+  description: Receives batch events from school-zone sensors/cameras for speeding violations and traffic congestion counts.
+  version: 1.0.0
+  title: School Zone Traffic Event Ingestion API
+  contact:
+    email: jgill391@my.bcit.ca
+
+paths:
+  /events/speeding:
+    post:
+      summary: Receive a batch of school-zone speeding violation records
+      operationId: app.receive_speeding_batch
+      description: Stores a batch of speeding violation events from a single device.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SpeedingViolationBatch"
+      responses:
+        "201":
+          description: Batch successfully received
+        "400":
+          description: Invalid input (schema validation failed)
+
+  /events/congestion:
+    post:
+      summary: Receive a batch of school-zone congestion count records
+      operationId: app.receive_congestion_batch
+      description: Stores a batch of vehicle-passage counts from a single device.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CongestionCountBatch"
+      responses:
+        "201":
+          description: Batch successfully received
+        "400":
+          description: Invalid input (schema validation failed)
+
+components:
+  schemas:
+    SpeedingViolationBatch:
+      type: object
+      required:
+        - sender_id
+        - sent_timestamp
+        - location_id
+        - violations
+      properties:
+        sender_id:
+          type: string
+          format: uuid
+          example: "d290f1ee-6c54-4b01-90e6-d701748f0851"
+        sent_timestamp:
+          type: string
+          format: date-time
+          example: "2026-01-09T08:00:00Z"
+        location_id:
+          type: string
+          description: Identifier for the school-zone location.
+          example: "SZ-042"
+        violations:
+          type: array
+          items:
+            $ref: "#/components/schemas/SpeedingViolation"
+
+    SpeedingViolation:
+      type: object
+      required:
+        - recorded_timestamp
+        - speed_kmh
+        - speed_limit_kmh
+      properties:
+        recorded_timestamp:
+          type: string
+          format: date-time
+          description: When the violation was recorded at the sensor.
+          example: "2026-01-09T07:43:12Z"
+        speed_kmh:
+          type: number
+          description: Measured vehicle speed (km/h).
+          example: 52.4
+        speed_limit_kmh:
+          type: number
+          description: Posted school-zone speed limit (km/h).
+          example: 30
+        direction:
+          type: string
+          description: Traffic direction for the count.
+          enum: ["NORTHBOUND", "SOUTHBOUND", "EASTBOUND", "WESTBOUND"]
+          example: "NORTHBOUND"
+
+    CongestionCountBatch:
+      type: object
+      required:
+        - sender_id
+        - sent_timestamp
+        - location_id
+        - counts
+      properties:
+        sender_id:
+          type: string
+          format: uuid
+          example: "a12b3c4d-1111-2222-3333-abcdefabcdef"
+        sent_timestamp:
+          type: string
+          format: date-time
+          example: "2026-01-09T08:00:00Z"
+        location_id:
+          type: string
+          example: "SZ-042"
+        counts:
+          type: array
+          items:
+            $ref: "#/components/schemas/CongestionCount"
+
+    CongestionCount:
+      type: object
+      required:
+        - recorded_timestamp
+        - vehicles_passing
+        - interval_seconds
+        - direction
+      properties:
+        recorded_timestamp:
+          type: string
+          format: date-time
+          description: Timestamp representing the end (or start) of the counting interval.
+          example: "2026-01-09T07:59:59Z"
+        vehicles_passing:
+          type: integer
+          description: Number of vehicles detected in the interval.
+          example: 38
+        interval_seconds:
+          type: integer
+          description: Duration of the counting interval in seconds.
+          example: 60
+        direction:
+          type: string
+          description: Traffic direction for the count.
+          enum: ["NORTHBOUND", "SOUTHBOUND", "EASTBOUND", "WESTBOUND"]
+          example: "NORTHBOUND"
