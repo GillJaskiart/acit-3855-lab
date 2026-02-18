@@ -5,7 +5,8 @@ import uuid
 import logging
 import logging.config
 import yaml
-from pykafka import KafkaClient
+from kafka import KafkaProducer
+import json
 
 
 with open("log_conf.yml", "r") as f:
@@ -19,11 +20,12 @@ with open("app_conf.yml", "r") as f:
 
 
 KAFKA_HOST = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
-KAFKA_TOPIC = app_config["events"]["topic"].encode("utf-8")
+TOPIC = app_config["events"]["topic"]
 
-client = KafkaClient(hosts=KAFKA_HOST)
-topic = client.topics[KAFKA_TOPIC]
-producer = topic.get_sync_producer()
+producer = KafkaProducer(
+    bootstrap_servers=[KAFKA_HOST],
+    value_serializer=lambda v: json.dumps(v).encode("utf-8"),
+)
 
 
 def _publish_event(event_type: str, event: dict, trace_id: str) -> int:
@@ -31,19 +33,22 @@ def _publish_event(event_type: str, event: dict, trace_id: str) -> int:
     Publishes one event to Kafka topic 'events'
     Returns HTTP-like status code (201 success, 500 failure)
     """
+    payload = {
+        "type": event_type,
+        "payload": event
+    }
+
     try:
-        # Add event_type so Storage can distinguish later
-        payload = {
-            "type": event_type,
-            "payload": event,
-        }
+        # kafka-python uses send(), not produce()
+        future = producer.send(TOPIC, payload)
 
-        producer.produce(json.dumps(payload).encode("utf-8"))
+        # Block until Kafka acknowledges (so you can log success/failure reliably)
+        future.get(timeout=10)
+        producer.flush()
 
-        logger.info(
-            f"Published event {event_type} to Kafka (trace_id: {trace_id})"
-        )
+        logger.info(f"Published event {event_type} to Kafka (trace_id: {trace_id})")
         return 201
+
     except Exception as e:
         logger.exception(
             f"Failed to publish event {event_type} to Kafka (trace_id: {trace_id}): {e}"
@@ -78,12 +83,13 @@ def receive_speeding_batch(body):
 
         # r = httpx.post(SPEEDING_URL, json=storage_event, timeout=5.0)
         # status_code = r.status_code
+      
+        status_code = _publish_event("speeding", storage_event, trace_id)
 
         logger.info(
-            f"Response for event speeding (trace_id: {trace_id}) has status {status_code}"
+            f"Kafka publish result for speeding (trace_id: {trace_id}) status {status_code}"
         )
 
-        status_code = _publish_event("speeding", storage_event, trace_id)
 
         # If Storage fails, stop immediately and return that failure code
         if status_code >= 400:
@@ -119,12 +125,12 @@ def receive_congestion_batch(body):
 
         # r = httpx.post(CONGESTION_URL, json=storage_event, timeout=5.0)
         # status_code = r.status_code
+        
+        status_code = _publish_event("congestion", storage_event, trace_id)
 
         logger.info(
             f"Response for event congestion (trace_id: {trace_id}) has status {status_code}"
         )
-
-        status_code = _publish_event("congestion", storage_event, trace_id)
 
         if status_code >= 400:
             return NoContent, status_code
