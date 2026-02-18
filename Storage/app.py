@@ -206,4 +206,5 @@ app.add_api("openapi.yml",
     validate_responses=True)
 
 if __name__ == "__main__":
+    setup_kafka_thread()
     app.run(port=8090)
