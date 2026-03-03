@@ -1,0 +1,6 @@
+version: 1
+events:
+  hostname: localhost
+  port: 9092
+  topic: events
+  analyzer_group: analyzer_group

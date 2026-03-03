@@ -1,0 +1,205 @@
+openapi: 3.0.3
+info:
+  description: Analyzer service to inspect Kafka 'events' topic and compute simple statistics.
+  version: 1.0.0
+  title: Analyzer API
+  contact:
+    email: jgill391@my.bcit.ca
+
+paths:
+  /events/speeding:
+    get:
+      summary: Get a speeding event by index in speeding-history
+      operationId: app.get_speeding_event
+      description: Returns the speeding event payload at the given index among ONLY speeding events in the Kafka topic. (Kafka topic contains mixed event types.)
+      parameters:
+        - name: index
+          in: query
+          required: true
+          description: The zero-based index of the speeding event to fetch.
+          schema:
+            type: integer
+            minimum: 0
+            example: 3
+      responses:
+        "200":
+          description: Successfully returned the speeding event
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SpeedingEvent"
+        "400":
+          description: Invalid request (e.g., bad index)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Not found (no speeding event at that index)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /events/congestion:
+    get:
+      summary: Get a congestion event by index in congestion-history
+      operationId: app.get_congestion_event
+      description: Returns the congestion event payload at the given index among ONLY congestion events in the Kafka topic. (Kafka topic contains mixed event types.)
+      parameters:
+        - name: index
+          in: query
+          required: true
+          description: The zero-based index of the congestion event to fetch.
+          schema:
+            type: integer
+            minimum: 0
+            example: 2
+      responses:
+        "200":
+          description: Successfully returned the congestion event
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CongestionEvent"
+        "400":
+          description: Invalid request (e.g., bad index)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Not found (no congestion event at that index)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /stats:
+    get:
+      summary: Get statistics about events currently in the Kafka topic
+      operationId: app.get_stats
+      description: Returns counts of each event type found in the Kafka topic scan.
+      responses:
+        "200":
+          description: Successfully returned statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Stats"
+
+components:
+  schemas:
+    SpeedingEvent:
+      type: object
+      required:
+        - sender_id
+        - location_id
+        - trace_id
+        - speed_kmh
+        - direction
+        - speed_limit_kmh
+        - batch_timestamp
+        - reading_timestamp
+      properties:
+        sender_id:
+          type: string
+          format: uuid
+          example: "d290f1ee-6c54-4b01-90e6-d701748f0851"
+        location_id:
+          type: string
+          description: Identifier for the school-zone location.
+          example: "SZ-042"
+        trace_id:
+          type: string
+          format: uuid
+          example: "b1a2c3d4-1111-2222-3333-abcdefabcdef"
+
+        speed_kmh:
+          type: number
+          example: 52.4
+        speed_limit_kmh:
+          type: number
+          example: 30
+        direction:
+          type: string
+          enum: ["NORTHBOUND", "SOUTHBOUND", "EASTBOUND", "WESTBOUND"]
+          example: "NORTHBOUND"
+        batch_timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the Receiver sent the batch (was sent_timestamp).
+          example: "2026-01-09T08:00:00Z"
+        reading_timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the sensor recorded the violation (was recorded_timestamp).
+          example: "2026-01-09T07:43:12Z"
+
+    CongestionEvent:
+      type: object
+      required:
+        - sender_id
+        - location_id
+        - trace_id
+        - vehicles_passing
+        - interval_seconds
+        - direction
+        - batch_timestamp
+        - reading_timestamp
+      properties:
+        sender_id:
+          type: string
+          format: uuid
+          example: "a12b3c4d-1111-2222-3333-abcdefabcdef"
+        location_id:
+          type: string
+          example: "SZ-042"
+        trace_id:
+          type: string
+          format: uuid
+          example: "b1a2c3d4-1111-2222-3333-abcdefabcdef"
+
+        vehicles_passing:
+          type: integer
+          example: 38
+        interval_seconds:
+          type: integer
+          example: 60
+        direction:
+          type: string
+          enum: ["NORTHBOUND", "SOUTHBOUND", "EASTBOUND", "WESTBOUND"]
+          example: "NORTHBOUND"
+
+        batch_timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the Receiver sent the batch (was sent_timestamp).
+          example: "2026-01-09T08:00:00Z"
+        reading_timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the sensor recorded the count (was recorded_timestamp).
+          example: "2026-01-09T07:59:59Z"
+
+    Stats:
+      type: object
+      required:
+        - num_speeding_events
+        - num_congestion_events
+      properties:
+        num_speeding_events:
+          type: integer
+          example: 189
+        num_congestion_events:
+          type: integer
+          example: 213
+
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          example: "No event at index 3"
