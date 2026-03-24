@@ -102,6 +102,7 @@ def _count_events():
             elif mtype == "congestion":
                 num_congestion += 1
 
+        logger.info("Stats scan finished: speeding=%d congestion=%d", num_speeding, num_congestion)
         return {"num_speeding_events": num_speeding, "num_congestion_events": num_congestion}, 200
 
     except Exception as e:
@@ -138,4 +139,4 @@ app.add_api("openapi.yml",
     validate_responses=True)
 
 if __name__ == "__main__":
-    app.run(port=8110)
+    app.run(port=8110, host="0.0.0.0")
