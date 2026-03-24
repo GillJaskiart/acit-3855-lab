@@ -33,6 +33,41 @@ services:
     volumes:
       - my-db:/var/lib/mysql
 
+  receiver:
+    build:
+      context: ./Receiver
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - kafka
+
+  storage:
+    build:
+      context: ./Storage
+      dockerfile: Dockerfile
+    depends_on:
+      - kafka
+      - db
+
+  processing:
+    build:
+      context: ./Processing
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    depends_on:
+      - storage
+
+  analyzer:
+    build:
+      context: ./Analyzer
+      dockerfile: Dockerfile
+    ports:
+      - "8110:8110"
+    depends_on:
+      - kafka
+
 volumes:
   my-db:
 
