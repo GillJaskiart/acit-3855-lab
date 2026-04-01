@@ -1,8 +1,0 @@
-{
-  "num_speeding_events": 600,
-  "min_speed_kmh": 31.0,
-  "max_speed_kmh": 90.0,
-  "num_congestion_events": 600,
-  "max_vehicles_passing": 120,
-  "last_updated": "2026-03-04T20:51:26.013234Z"
-}

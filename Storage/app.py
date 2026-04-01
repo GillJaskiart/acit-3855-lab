@@ -16,7 +16,7 @@ from kafka import KafkaConsumer
 
 from models import SpeedingViolation, CongestionCount
 
-with open("log_conf.yml", "r") as f:
+with open("/config/storage_log_config.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read())
     logging.config.dictConfig(LOG_CONFIG)
 
@@ -24,7 +24,7 @@ logger = logging.getLogger("basicLogger")
 
 
 
-with open("app_conf.yml", "r") as f:
+with open("/config/storage_config.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
 ds = app_config["datastore"]

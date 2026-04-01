@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from models import Base
 import yaml
 
-with open("app_conf.yml", "r") as f:
+with open("/config/storage_config.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
     
 ds = app_config["datastore"]

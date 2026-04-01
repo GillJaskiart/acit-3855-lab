@@ -12,14 +12,14 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 
 # Logging
-with open("log_conf.yml", "r") as f:
+with open("/config/processing_log_config.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read())
     logging.config.dictConfig(LOG_CONFIG)
 
 logger = logging.getLogger("basicLogger")
 
 
-with open("app_conf.yml", "r") as f:
+with open("/config/processing_config.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
@@ -40,8 +40,15 @@ def utc_now_z() -> str:
 def read_stats_file():
     if not os.path.exists(STATS_FILE):
         return None
-    with open(STATS_FILE, "r") as f:
-        return json.load(f)
+    try:
+        with open(STATS_FILE, "r") as f:
+            content = f.read().strip()
+            if not content:
+                return None
+            return json.loads(content)
+    except (json.JSONDecodeError, OSError) as e:
+        logger.warning("Stats file missing/empty/invalid. Reinitializing. Error: %s", e)
+        return None
 
 
 def write_stats_file(stats: dict):
