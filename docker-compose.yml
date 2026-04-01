@@ -87,6 +87,15 @@ services:
       - ./config/analyzer_config.yml:/config/analyzer_config.yml
       - ./config/analyzer_log_config.yml:/config/analyzer_log_config.yml
       - ./logs:/logs
+  dashboard:
+    build:
+      context: ./Dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - processing
+      - analyzer
 
 volumes:
   my-db:

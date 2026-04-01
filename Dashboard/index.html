@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traffic Monitoring Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="logo.png" alt="Project Logo" class="logo" />
+    <div>
+      <h1>Traffic Monitoring Dashboard</h1>
+      <p>Speeding and congestion event analytics</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Processing Service Stats</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Total Speeding Events</td>
+            <td id="num_speeding_events">-</td>
+          </tr>
+          <tr>
+            <td>Minimum Speed (km/h)</td>
+            <td id="min_speed_kmh">-</td>
+          </tr>
+          <tr>
+            <td>Maximum Speed (km/h)</td>
+            <td id="max_speed_kmh">-</td>
+          </tr>
+          <tr>
+            <td>Total Congestion Events</td>
+            <td id="num_congestion_events">-</td>
+          </tr>
+          <tr>
+            <td>Max Vehicles Passing</td>
+            <td id="max_vehicles_passing">-</td>
+          </tr>
+          <tr>
+            <td>Last Updated</td>
+            <td id="last_updated">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Analyzer Service Stats</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Speeding Events in Kafka</td>
+            <td id="analyzer_num_speeding_events">-</td>
+          </tr>
+          <tr>
+            <td>Congestion Events in Kafka</td>
+            <td id="analyzer_num_congestion_events">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Random Speeding Event</h2>
+      <pre id="speeding_event">Loading...</pre>
+    </section>
+
+    <section class="card">
+      <h2>Random Congestion Event</h2>
+      <pre id="congestion_event">Loading...</pre>
+    </section>
+
+    <section class="card">
+      <h2>Dashboard Refresh</h2>
+      <p>Browser refresh time: <span id="browser_updated">-</span></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
