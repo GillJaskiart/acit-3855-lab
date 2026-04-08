@@ -1,3 +1,4 @@
+import json
 import logging
 import logging.config
 import os
@@ -8,10 +9,6 @@ from connexion import NoContent
 import httpx
 import yaml
 from apscheduler.schedulers.background import BackgroundScheduler
-from sqlalchemy import create_engine, select
-from sqlalchemy.orm import sessionmaker
-
-from models import Base, ServiceStatus, dt_to_iso_z
 
 
 with open("/config/health_check_log_config.yml", "r") as f:
@@ -28,12 +25,6 @@ with open("/config/health_check_config.yml", "r") as f:
 DATASTORE_FILE = app_config["datastore"]["filename"]
 os.makedirs(os.path.dirname(DATASTORE_FILE), exist_ok=True)
 
-ENGINE = create_engine(
-    f"sqlite:///{DATASTORE_FILE}",
-    connect_args={"check_same_thread": False}
-)
-SESSION_MAKER = sessionmaker(bind=ENGINE, expire_on_commit=False)
-
 SERVER_PORT = int(app_config["server"]["port"])
 SCHED_INTERVAL_SECONDS = int(app_config["scheduler"]["interval"])
 REQUEST_TIMEOUT_SECONDS = float(app_config["scheduler"]["timeout"])
@@ -41,40 +32,34 @@ API_ENDPOINTS = app_config["api"]
 SERVICE_ENDPOINTS = app_config["services"]
 
 
-def utc_now() -> datetime:
-    return datetime.now(timezone.utc)
+def utc_now_z() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
-def init_database():
-    Base.metadata.create_all(ENGINE)
+def default_statuses(last_update=None):
+    statuses = {service_name: "Unknown" for service_name in SERVICE_ENDPOINTS}
+    statuses["last_update"] = last_update or utc_now_z()
+    return statuses
 
 
-def make_session():
-    return SESSION_MAKER()
+def read_status_file():
+    if not os.path.exists(DATASTORE_FILE):
+        return None
+
+    try:
+        with open(DATASTORE_FILE, "r", encoding="utf-8") as status_file:
+            contents = status_file.read().strip()
+            if not contents:
+                return None
+            return json.loads(contents)
+    except (json.JSONDecodeError, OSError) as err:
+        logger.warning("Status file missing, empty, or invalid. Reinitializing. Error: %s", err)
+        return None
 
 
-def record_status(session, service_name: str, status: str, checked_at: datetime):
-    service_status = session.get(ServiceStatus, service_name)
-
-    if service_status is None:
-        service_status = ServiceStatus(
-            service_name=service_name,
-            status=status,
-            last_checked=checked_at
-        )
-        session.add(service_status)
-    else:
-        service_status.status = status
-        service_status.last_checked = checked_at
-
-    session.commit()
-
-    logger.info(
-        "Recorded %s service status as %s at %s",
-        service_name,
-        status,
-        dt_to_iso_z(checked_at)
-    )
+def write_status_file(statuses: dict):
+    with open(DATASTORE_FILE, "w", encoding="utf-8") as status_file:
+        json.dump(statuses, status_file, indent=2)
 
 
 def check_service(service_name: str, service_config: dict):
@@ -94,20 +79,29 @@ def check_service(service_name: str, service_config: dict):
     except httpx.RequestError as err:
         logger.warning("Health check request failed for %s: %s", service_name, err)
 
-    checked_at = utc_now()
-    return status, checked_at
+    return status
 
 
 def refresh_service_statuses():
     logger.info("Starting service health poll")
-    session = make_session()
+    statuses = read_status_file()
+    if statuses is None:
+        statuses = default_statuses()
 
-    try:
-        for service_name, service_config in SERVICE_ENDPOINTS.items():
-            status, checked_at = check_service(service_name, service_config)
-            record_status(session, service_name, status, checked_at)
-    finally:
-        session.close()
+    checked_at = utc_now_z()
+
+    for service_name, service_config in SERVICE_ENDPOINTS.items():
+        status = check_service(service_name, service_config)
+        statuses[service_name] = status
+        logger.info(
+            "Recorded %s service status as %s at %s",
+            service_name,
+            status,
+            checked_at
+        )
+
+    statuses["last_update"] = checked_at
+    write_status_file(statuses)
 
     logger.info("Completed service health poll")
 
@@ -118,31 +112,13 @@ def get_service_statuses():
         API_ENDPOINTS["status_path"]
     )
 
-    session = make_session()
-    try:
-        statement = select(ServiceStatus)
-        rows = {
-            row.service_name: row
-            for row in session.execute(statement).scalars().all()
-        }
+    statuses = read_status_file()
+    if statuses is None:
+        statuses = default_statuses()
 
-        response = {}
-        latest_update = None
-
-        for service_name in SERVICE_ENDPOINTS:
-            row = rows.get(service_name)
-            response[service_name] = row.status if row else "Unknown"
-
-            if row and (latest_update is None or row.last_checked > latest_update):
-                latest_update = row.last_checked
-
-        response["last_update"] = dt_to_iso_z(latest_update) or dt_to_iso_z(utc_now())
-
-        logger.debug("Returning service health status: %s", response)
-        logger.info("Service health status request completed")
-        return response, 200
-    finally:
-        session.close()
+    logger.debug("Returning service health status: %s", statuses)
+    logger.info("Service health status request completed")
+    return statuses, 200
 
 
 def health():
@@ -168,7 +144,6 @@ app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 
 if __name__ == "__main__":
-    init_database()
     refresh_service_statuses()
     init_scheduler()
     app.run(port=SERVER_PORT, host="0.0.0.0")

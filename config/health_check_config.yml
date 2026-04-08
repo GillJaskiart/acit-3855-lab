@@ -8,7 +8,7 @@ scheduler:
   interval: 5
   timeout: 5
 datastore:
-  filename: /data/health_status.sqlite
+  filename: /data/data.json
 services:
   receiver:
     url: http://receiver:8080/health

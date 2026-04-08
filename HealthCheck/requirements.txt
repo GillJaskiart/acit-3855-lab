@@ -27,7 +27,6 @@ PyYAML==6.0.3
 referencing==0.37.0
 requests==2.32.5
 rpds-py==0.30.0
-SQLAlchemy==2.0.46
 starlette==0.52.1
 swagger_ui_bundle==1.1.0
 typing_extensions==4.15.0
