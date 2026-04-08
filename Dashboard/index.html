@@ -16,6 +16,29 @@
   </header>
 
   <main class="container">
+    <section class="card card-wide">
+      <h2>Backend Service Health</h2>
+      <div class="status-list">
+        <div class="status-row">
+          <span>Receiver</span>
+          <span id="receiver_status" class="status-badge status-unknown">Unknown</span>
+        </div>
+        <div class="status-row">
+          <span>Storage</span>
+          <span id="storage_status" class="status-badge status-unknown">Unknown</span>
+        </div>
+        <div class="status-row">
+          <span>Processing</span>
+          <span id="processing_status" class="status-badge status-unknown">Unknown</span>
+        </div>
+        <div class="status-row">
+          <span>Analyzer</span>
+          <span id="analyzer_status" class="status-badge status-unknown">Unknown</span>
+        </div>
+      </div>
+      <p class="status-updated">Last Update: <span id="health_last_update">-</span></p>
+    </section>
+
     <section class="card">
       <h2>Processing Service Stats</h2>
       <table>

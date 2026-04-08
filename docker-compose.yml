@@ -87,6 +87,24 @@ services:
       - ./config/analyzer_config.yml:/config/analyzer_config.yml
       - ./config/analyzer_log_config.yml:/config/analyzer_log_config.yml
       - ./logs:/logs
+
+  health-check:
+    build:
+      context: ./HealthCheck
+      dockerfile: Dockerfile
+    ports:
+      - "8120:8120"
+    depends_on:
+      - receiver
+      - storage
+      - processing
+      - analyzer
+    volumes:
+      - ./config/health_check_config.yml:/config/health_check_config.yml
+      - ./config/health_check_log_config.yml:/config/health_check_log_config.yml
+      - ./logs:/logs
+      - ./data/health-check:/data
+
   dashboard:
     build:
       context: ./Dashboard
@@ -96,6 +114,7 @@ services:
     depends_on:
       - processing
       - analyzer
+      - health-check
 
 volumes:
   my-db:

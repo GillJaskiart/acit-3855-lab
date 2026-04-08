@@ -137,6 +137,11 @@ def receive_congestion_batch(body):
 
     return NoContent, 201
 
+
+def health():
+    """Returns the health status of the Receiver service."""
+    return NoContent, 200
+
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml",
     strict_validation=True,

@@ -147,6 +147,11 @@ def get_stats():
     return stats, 200
 
 
+def health():
+    """Returns the health status of the Processing service."""
+    return NoContent, 200
+
+
 app = connexion.FlaskApp(__name__, specification_dir="")
 
 app.add_middleware(

@@ -1,0 +1,20 @@
+version: 1
+server:
+  port: 8120
+api:
+  health_path: /health
+  status_path: /status
+scheduler:
+  interval: 5
+  timeout: 5
+datastore:
+  filename: /data/health_status.sqlite
+services:
+  receiver:
+    url: http://receiver:8080/health
+  storage:
+    url: http://storage:8090/health
+  processing:
+    url: http://processing:8100/health
+  analyzer:
+    url: http://analyzer:8110/health

@@ -199,6 +199,11 @@ def get_congestion_events(session, start_timestamp, end_timestamp):
     return results, 200
 
 
+def health():
+    """Returns the health status of the Storage service."""
+    return NoContent, 200
+
+
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml",

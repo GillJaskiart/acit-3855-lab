@@ -7,6 +7,15 @@ info:
     email: jgill391@my.bcit.ca
 
 paths:
+  /health:
+    get:
+      summary: Get the Receiver service health status
+      operationId: app.health
+      description: Returns 200 when the Receiver service is running.
+      responses:
+        "200":
+          description: Receiver service is healthy
+
   /events/speeding:
     post:
       summary: Receive a batch of school-zone speeding violation records

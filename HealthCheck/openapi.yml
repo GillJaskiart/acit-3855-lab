@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  description: Polls the backend services health endpoints and stores their current availability.
+  version: "1.0.0"
+  title: Health Check API
+  contact:
+    email: jgill391@my.bcit.ca
+
+paths:
+  /health:
+    get:
+      summary: Get the Health Check service health status
+      operationId: app.health
+      description: Returns 200 when the Health Check service is running.
+      responses:
+        "200":
+          description: Health Check service is healthy
+
+  /status:
+    get:
+      summary: Get the latest backend service statuses
+      operationId: app.get_service_statuses
+      description: Returns the most recently recorded status of each monitored service.
+      responses:
+        "200":
+          description: Successfully returned the current service statuses
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatusSummary"
+
+components:
+  schemas:
+    ServiceAvailability:
+      type: string
+      enum: ["Up", "Down", "Unknown"]
+      example: "Up"
+
+    HealthStatusSummary:
+      type: object
+      required:
+        - receiver
+        - storage
+        - processing
+        - analyzer
+        - last_update
+      properties:
+        receiver:
+          $ref: "#/components/schemas/ServiceAvailability"
+        storage:
+          $ref: "#/components/schemas/ServiceAvailability"
+        processing:
+          $ref: "#/components/schemas/ServiceAvailability"
+        analyzer:
+          $ref: "#/components/schemas/ServiceAvailability"
+        last_update:
+          type: string
+          format: date-time
+          example: "2026-03-22T11:12:23Z"

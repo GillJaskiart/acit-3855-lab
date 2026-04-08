@@ -136,6 +136,11 @@ def get_stats():
     return _count_events()
 
 
+def health():
+    """Returns the health status of the Analyzer service."""
+    return NoContent, 200
+
+
 app = connexion.FlaskApp(__name__, specification_dir='')
 
 app.add_middleware(

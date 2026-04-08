@@ -7,6 +7,15 @@ info:
     email: jgill391@my.bcit.ca
 
 paths:
+  /health:
+    get:
+      summary: Get the Analyzer service health status
+      operationId: app.health
+      description: Returns 200 when the Analyzer service is running.
+      responses:
+        "200":
+          description: Analyzer service is healthy
+
   /events/speeding:
     get:
       summary: Get a speeding event by index in speeding-history
