@@ -1,12 +1,16 @@
 import connexion
 from connexion import NoContent
-# import httpx
-import uuid
+import json
 import logging
 import logging.config
+import random
+import threading
+import time
+import uuid
+
 import yaml
 from kafka import KafkaProducer
-import json
+from kafka.errors import KafkaError, NoBrokersAvailable
 
 
 with open("/config/receiver_log_config.yml", "r") as f:
@@ -22,10 +26,95 @@ with open("/config/receiver_config.yml", "r") as f:
 KAFKA_HOST = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
 TOPIC = app_config["events"]["topic"]
 
-producer = KafkaProducer(
-    bootstrap_servers=[KAFKA_HOST],
-    value_serializer=lambda v: json.dumps(v).encode("utf-8"),
-)
+
+class KafkaProducerWrapper:
+    """Keeps retrying until Kafka is available and reuses one producer."""
+
+    def __init__(self, hostname: str, topic: str):
+        self.hostname = hostname
+        self.topic = topic
+        self.producer = None
+        self._lock = threading.RLock()
+        self.connect()
+
+    @staticmethod
+    def _sleep_before_retry():
+        time.sleep(random.randint(500, 1500) / 1000)
+
+    def _reset_producer_locked(self):
+        if self.producer is not None:
+            try:
+                self.producer.close()
+            except Exception as err:
+                logger.warning("Error while closing Kafka producer: %s", err)
+            finally:
+                self.producer = None
+
+    def make_producer(self) -> bool:
+        """
+        Tries once to create a producer and confirm Kafka is reachable.
+        Returns True on success, False on failure.
+        """
+        with self._lock:
+            if self.producer is not None:
+                return True
+
+            temp_producer = None
+
+            try:
+                temp_producer = KafkaProducer(
+                    bootstrap_servers=[self.hostname],
+                    value_serializer=lambda value: json.dumps(value).encode("utf-8"),
+                )
+
+                partitions = temp_producer.partitions_for(self.topic)
+                if partitions is None:
+                    raise NoBrokersAvailable()
+
+                self.producer = temp_producer
+                logger.info("Kafka producer connected to %s for topic %s", self.hostname, self.topic)
+                return True
+
+            except (KafkaError, NoBrokersAvailable, OSError, ValueError) as err:
+                logger.warning("Kafka producer connection failed: %s", err)
+                if temp_producer is not None:
+                    try:
+                        temp_producer.close()
+                    except Exception:
+                        pass
+                self.producer = None
+                return False
+
+    def connect(self):
+        """Infinite loop that keeps retrying until Kafka becomes available."""
+        while True:
+            logger.debug("Trying to connect Receiver producer to Kafka...")
+            if self.make_producer():
+                return
+            self._sleep_before_retry()
+
+    def send(self, payload: dict):
+        """
+        Sends using the shared producer and reconnects if Kafka goes away.
+        """
+        while True:
+            if self.producer is None:
+                self.connect()
+
+            with self._lock:
+                try:
+                    future = self.producer.send(self.topic, payload)
+                    future.get(timeout=10)
+                    self.producer.flush()
+                    return
+                except (KafkaError, OSError, AttributeError, ValueError) as err:
+                    logger.warning("Kafka send failed, reconnecting producer: %s", err)
+                    self._reset_producer_locked()
+
+            self._sleep_before_retry()
+
+
+producer_wrapper = KafkaProducerWrapper(KAFKA_HOST, TOPIC)
 
 
 def _publish_event(event_type: str, event: dict, trace_id: str) -> int:
@@ -39,13 +128,7 @@ def _publish_event(event_type: str, event: dict, trace_id: str) -> int:
     }
 
     try:
-        # kafka-python uses send(), not produce()
-        future = producer.send(TOPIC, payload)
-
-        # Block until Kafka acknowledges (so you can log success/failure reliably)
-        future.get(timeout=10)
-        producer.flush()
-
+        producer_wrapper.send(payload)
         logger.info(f"Published event {event_type} to Kafka (trace_id: {trace_id})")
         return 201
 
