@@ -6,13 +6,13 @@ import random
 import threading
 import time
 
-import yaml
 import connexion
+import yaml
 from connexion import NoContent
+from connexion.middleware import MiddlewarePosition
 from kafka import KafkaConsumer
 from kafka.errors import KafkaError, NoBrokersAvailable
-
-from connexion.middleware import MiddlewarePosition
+from kafka.structs import TopicPartition
 from starlette.middleware.cors import CORSMiddleware
 
 with open("/config/analyzer_log_config.yml", "r") as f:
@@ -26,11 +26,10 @@ with open("/config/analyzer_config.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
 
-# Kafka config
 kcfg = app_config["events"]
 KAFKA_HOST = f"{kcfg['hostname']}:{kcfg['port']}"
 TOPIC = kcfg["topic"]
-CONSUMER_GROUP = bcfg_group = kcfg.get("analyzer_group", "analyzer_group")
+CONSUMER_GROUP = kcfg.get("analyzer_group", "analyzer_group")
 
 
 def _validate_index(index):
@@ -41,6 +40,7 @@ def _validate_index(index):
         return idx, None
     except Exception:
         return None, ({"message": "index must be an integer >= 0"}, 400)
+
 
 class KafkaAnalyzerWrapper:
     """Consumes Kafka once in the background and serves Analyzer reads from memory."""
@@ -86,9 +86,7 @@ class KafkaAnalyzerWrapper:
 
             try:
                 temp_consumer = KafkaConsumer(
-                    self.topic,
                     bootstrap_servers=[self.hostname],
-                    group_id=self.group_id,
                     enable_auto_commit=False,
                     auto_offset_reset="earliest",
                     consumer_timeout_ms=1000,
@@ -99,11 +97,18 @@ class KafkaAnalyzerWrapper:
                 if partitions is None:
                     raise NoBrokersAvailable()
 
+                topic_partitions = [
+                    TopicPartition(self.topic, partition) for partition in sorted(partitions)
+                ]
+                temp_consumer.assign(topic_partitions)
+                temp_consumer.seek_to_beginning(*topic_partitions)
+
                 self.consumer = temp_consumer
                 logger.info(
-                    "Analyzer consumer connected to %s for topic %s",
+                    "Analyzer consumer connected to %s for topic %s across %d partitions",
                     self.hostname,
                     self.topic,
+                    len(topic_partitions),
                 )
                 return True
 
@@ -188,8 +193,6 @@ class KafkaAnalyzerWrapper:
 analyzer_wrapper = KafkaAnalyzerWrapper(KAFKA_HOST, TOPIC, CONSUMER_GROUP)
 
 
-# API Handlers
-
 def get_speeding_event(index):
     idx, err = _validate_index(index)
     if err:
@@ -231,7 +234,7 @@ def health():
     return NoContent, 200
 
 
-app = connexion.FlaskApp(__name__, specification_dir='')
+app = connexion.FlaskApp(__name__, specification_dir="")
 
 if os.environ.get("CORS_ALLOW_ALL") == "yes":
     app.add_middleware(
@@ -249,6 +252,3 @@ app.add_api(
     strict_validation=True,
     validate_responses=True,
 )
-
-if __name__ == "__main__":
-    app.run(port=8110, host="0.0.0.0")

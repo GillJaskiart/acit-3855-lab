@@ -18,4 +18,4 @@ USER nobody
 EXPOSE 8110
 
 ENTRYPOINT ["python3"]
-CMD ["app.py"]
+CMD ["run.py"]
