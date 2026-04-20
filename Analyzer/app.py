@@ -1,10 +1,16 @@
 import json
 import logging
 import logging.config
+import os
+import random
+import threading
+import time
+
 import yaml
 import connexion
 from connexion import NoContent
 from kafka import KafkaConsumer
+from kafka.errors import KafkaError, NoBrokersAvailable
 
 from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
@@ -36,84 +42,150 @@ def _validate_index(index):
     except Exception:
         return None, ({"message": "index must be an integer >= 0"}, 400)
 
-def _new_consumer_from_beginning():
-    """
-    scans from the beginning.
-    Kafka is treated like an indexable queue; implement by scanning.
-    """
-    consumer = KafkaConsumer(
-        TOPIC,
-        bootstrap_servers=[KAFKA_HOST],
-        group_id=CONSUMER_GROUP,
-        enable_auto_commit=False,          # do not commit; Analyzer is read-only
-        auto_offset_reset="earliest",      # start at beginning to support index lookups
-        consumer_timeout_ms=1000,          # stop iteration if no more messages
-        value_deserializer=lambda v: json.loads(v.decode("utf-8")),
-    )
-    return consumer
+class KafkaAnalyzerWrapper:
+    """Consumes Kafka once in the background and serves Analyzer reads from memory."""
+
+    def __init__(self, hostname: str, topic: str, group_id: str):
+        self.hostname = hostname
+        self.topic = topic
+        self.group_id = group_id
+        self.consumer = None
+        self._consumer_lock = threading.RLock()
+        self._data_lock = threading.RLock()
+        self._speeding_events = []
+        self._congestion_events = []
+        self._last_offsets = {}
+        self.connect()
+        self._consumer_thread = threading.Thread(
+            target=self._consume_messages,
+            name="analyzer-kafka-consumer",
+            daemon=True,
+        )
+        self._consumer_thread.start()
+
+    @staticmethod
+    def _sleep_before_retry():
+        time.sleep(random.randint(500, 1500) / 1000)
+
+    def _reset_consumer_locked(self):
+        if self.consumer is not None:
+            try:
+                self.consumer.close()
+            except Exception as err:
+                logger.warning("Error while closing Analyzer consumer: %s", err)
+            finally:
+                self.consumer = None
+
+    def make_consumer(self) -> bool:
+        """Tries once to create a reusable consumer and validate topic access."""
+        with self._consumer_lock:
+            if self.consumer is not None:
+                return True
+
+            temp_consumer = None
+
+            try:
+                temp_consumer = KafkaConsumer(
+                    self.topic,
+                    bootstrap_servers=[self.hostname],
+                    group_id=self.group_id,
+                    enable_auto_commit=False,
+                    auto_offset_reset="earliest",
+                    consumer_timeout_ms=1000,
+                    value_deserializer=lambda value: json.loads(value.decode("utf-8")),
+                )
+
+                partitions = temp_consumer.partitions_for_topic(self.topic)
+                if partitions is None:
+                    raise NoBrokersAvailable()
+
+                self.consumer = temp_consumer
+                logger.info(
+                    "Analyzer consumer connected to %s for topic %s",
+                    self.hostname,
+                    self.topic,
+                )
+                return True
+
+            except (KafkaError, NoBrokersAvailable, OSError, ValueError) as err:
+                logger.warning("Analyzer Kafka consumer connection failed: %s", err)
+                if temp_consumer is not None:
+                    try:
+                        temp_consumer.close()
+                    except Exception:
+                        pass
+                self.consumer = None
+                return False
+
+    def connect(self):
+        """Infinite loop that keeps retrying until Kafka becomes available."""
+        while True:
+            logger.debug("Trying to connect Analyzer consumer to Kafka...")
+            if self.make_consumer():
+                return
+            self._sleep_before_retry()
+
+    def _record_message(self, message):
+        msg = message.value
+        message_key = (message.topic, message.partition)
+
+        with self._data_lock:
+            last_offset = self._last_offsets.get(message_key, -1)
+            if message.offset <= last_offset:
+                return
+
+            self._last_offsets[message_key] = message.offset
+
+            payload = msg.get("payload")
+            message_type = msg.get("type")
+
+            if message_type == "speeding":
+                self._speeding_events.append(payload)
+            elif message_type == "congestion":
+                self._congestion_events.append(payload)
+            else:
+                logger.warning("Analyzer received unknown Kafka message type '%s'", message_type)
+
+    def _consume_messages(self):
+        """Continuously consumes Kafka once and keeps the in-memory cache warm."""
+        while True:
+            if self.consumer is None:
+                self.connect()
+
+            try:
+                for message in self.consumer:
+                    self._record_message(message)
+            except (KafkaError, OSError, AttributeError, ValueError) as err:
+                logger.warning("Analyzer consumer loop failed, reconnecting: %s", err)
+                with self._consumer_lock:
+                    self._reset_consumer_locked()
+                self._sleep_before_retry()
+            except Exception as err:
+                logger.exception("Unexpected Analyzer consumer failure: %s", err)
+                with self._consumer_lock:
+                    self._reset_consumer_locked()
+                self._sleep_before_retry()
+
+    def get_stats(self):
+        with self._data_lock:
+            return {
+                "num_speeding_events": len(self._speeding_events),
+                "num_congestion_events": len(self._congestion_events),
+            }
+
+    def get_event_payload(self, event_type: str, target_index: int):
+        with self._data_lock:
+            events = self._speeding_events if event_type == "speeding" else self._congestion_events
+
+            if target_index >= len(events):
+                logger.info("No %s event at index=%d (found %d total)", event_type, target_index, len(events))
+                return None
+
+            payload = events[target_index]
+            return dict(payload) if isinstance(payload, dict) else payload
 
 
-def _find_nth_event_payload(event_type: str, target_index: int):
-    """
-    Scan the mixed topic and return the payload for the Nth event of given type.
-    Index is per-type (speeding index counts only speeding messages).
-    """
-    consumer = _new_consumer_from_beginning()
-    count_for_type = 0
-
-    logger.debug("Searching for type=%s index=%d on topic=%s", event_type, target_index, TOPIC)
-
-    try:
-        for message in consumer:
-            msg = message.value  # dict: {"type": "...", "payload": {...}}
-            mtype = msg.get("type")
-            if mtype != event_type:
-                continue
-
-            if count_for_type == target_index:
-                payload = msg.get("payload")
-                logger.info("Found %s event at index=%d", event_type, target_index)
-                return payload, 200
-
-            count_for_type += 1
-
-        # If we get here, we hit consumer_timeout_ms with no more messages
-        logger.info("No %s event at index=%d (found %d total)", event_type, target_index, count_for_type)
-        return {"message": f"No {event_type} event at index {target_index}!"}, 404
-
-    except Exception as e:
-        logger.exception("Error scanning Kafka for %s index=%d: %s", event_type, target_index, e)
-        return {"message": "Error reading from Kafka"}, 500
-
-    finally:
-        consumer.close()
-
-def _count_events():
-    """
-    Scan topic and count events by type.
-    """
-    consumer = _new_consumer_from_beginning()
-    num_speeding = 0
-    num_congestion = 0
-
-    try:
-        for message in consumer:
-            msg = message.value
-            mtype = msg.get("type")
-            if mtype == "speeding":
-                num_speeding += 1
-            elif mtype == "congestion":
-                num_congestion += 1
-
-        logger.info("Stats scan finished: speeding=%d congestion=%d", num_speeding, num_congestion)
-        return {"num_speeding_events": num_speeding, "num_congestion_events": num_congestion}, 200
-
-    except Exception as e:
-        logger.exception("Error counting Kafka events: %s", e)
-        return {"message": "Error reading from Kafka"}, 500
-
-    finally:
-        consumer.close()
+analyzer_wrapper = KafkaAnalyzerWrapper(KAFKA_HOST, TOPIC, CONSUMER_GROUP)
 
 
 # API Handlers
@@ -122,18 +194,36 @@ def get_speeding_event(index):
     idx, err = _validate_index(index)
     if err:
         return err
-    return _find_nth_event_payload("speeding", idx)
+
+    payload = analyzer_wrapper.get_event_payload("speeding", idx)
+    if payload is None:
+        return {"message": f"No speeding event at index {idx}!"}, 404
+
+    logger.info("Found speeding event at index=%d", idx)
+    return payload, 200
 
 
 def get_congestion_event(index):
     idx, err = _validate_index(index)
     if err:
         return err
-    return _find_nth_event_payload("congestion", idx)
+
+    payload = analyzer_wrapper.get_event_payload("congestion", idx)
+    if payload is None:
+        return {"message": f"No congestion event at index {idx}!"}, 404
+
+    logger.info("Found congestion event at index=%d", idx)
+    return payload, 200
 
 
 def get_stats():
-    return _count_events()
+    stats = analyzer_wrapper.get_stats()
+    logger.info(
+        "Analyzer stats served from cache: speeding=%d congestion=%d",
+        stats["num_speeding_events"],
+        stats["num_congestion_events"],
+    )
+    return stats, 200
 
 
 def health():
@@ -143,18 +233,22 @@ def health():
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+if os.environ.get("CORS_ALLOW_ALL") == "yes":
+    app.add_middleware(
+        CORSMiddleware,
+        position=MiddlewarePosition.BEFORE_EXCEPTION,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-app.add_api("openapi.yml",
+app.add_api(
+    "openapi.yml",
+    base_path="/analyzer",
     strict_validation=True,
-    validate_responses=True)
+    validate_responses=True,
+)
 
 if __name__ == "__main__":
     app.run(port=8110, host="0.0.0.0")

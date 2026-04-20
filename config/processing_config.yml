@@ -7,6 +7,6 @@ scheduler:
 
 eventstores:
   speeding:
-    url: http://storage:8090/events/speeding
+    url: http://storage:8090/storage/events/speeding
   congestion:
-    url: http://storage:8090/events/congestion
+    url: http://storage:8090/storage/events/congestion

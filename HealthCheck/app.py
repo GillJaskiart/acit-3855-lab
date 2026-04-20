@@ -9,6 +9,8 @@ from connexion import NoContent
 import httpx
 import yaml
 from apscheduler.schedulers.background import BackgroundScheduler
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
 
 
 with open("/config/health_check_log_config.yml", "r") as f:
@@ -22,8 +24,8 @@ with open("/config/health_check_config.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
 
-DATASTORE_FILE = app_config["datastore"]["filename"]
-os.makedirs(os.path.dirname(DATASTORE_FILE), exist_ok=True)
+STATUS_FILE = app_config["datastore"]["filename"]
+os.makedirs(os.path.dirname(STATUS_FILE), exist_ok=True)
 
 SERVER_PORT = int(app_config["server"]["port"])
 SCHED_INTERVAL_SECONDS = int(app_config["scheduler"]["interval"])
@@ -36,29 +38,29 @@ def utc_now_z() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
-def default_statuses(last_update=None):
+def default_statuses():
     statuses = {service_name: "Unknown" for service_name in SERVICE_ENDPOINTS}
-    statuses["last_update"] = last_update or utc_now_z()
+    statuses["last_update"] = "2026-01-01T00:00:00Z"
     return statuses
 
 
 def read_status_file():
-    if not os.path.exists(DATASTORE_FILE):
+    if not os.path.exists(STATUS_FILE):
         return None
 
     try:
-        with open(DATASTORE_FILE, "r", encoding="utf-8") as status_file:
-            contents = status_file.read().strip()
-            if not contents:
+        with open(STATUS_FILE, "r") as status_file:
+            content = status_file.read().strip()
+            if not content:
                 return None
-            return json.loads(contents)
+            return json.loads(content)
     except (json.JSONDecodeError, OSError) as err:
-        logger.warning("Status file missing, empty, or invalid. Reinitializing. Error: %s", err)
+        logger.warning("Status file missing/empty/invalid. Reinitializing. Error: %s", err)
         return None
 
 
 def write_status_file(statuses: dict):
-    with open(DATASTORE_FILE, "w", encoding="utf-8") as status_file:
+    with open(STATUS_FILE, "w") as status_file:
         json.dump(statuses, status_file, indent=2)
 
 
@@ -83,7 +85,7 @@ def check_service(service_name: str, service_config: dict):
 
 
 def refresh_service_statuses():
-    logger.info("Starting service health poll")
+    logger.info("Periodic health check started")
     statuses = read_status_file()
     if statuses is None:
         statuses = default_statuses()
@@ -103,7 +105,8 @@ def refresh_service_statuses():
     statuses["last_update"] = checked_at
     write_status_file(statuses)
 
-    logger.info("Completed service health poll")
+    logger.debug("Updated health statuses: %s", statuses)
+    logger.info("Periodic health check ended")
 
 
 def get_service_statuses():
@@ -114,7 +117,8 @@ def get_service_statuses():
 
     statuses = read_status_file()
     if statuses is None:
-        statuses = default_statuses()
+        logger.error("Health statuses do not exist")
+        return {"message": "Health statuses do not exist"}, 404
 
     logger.debug("Returning service health status: %s", statuses)
     logger.info("Service health status request completed")
@@ -140,7 +144,23 @@ def init_scheduler():
 
 
 app = connexion.FlaskApp(__name__, specification_dir="")
-app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
+
+if os.environ.get("CORS_ALLOW_ALL") == "yes":
+    app.add_middleware(
+        CORSMiddleware,
+        position=MiddlewarePosition.BEFORE_EXCEPTION,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+app.add_api(
+    "openapi.yml",
+    base_path="/health-check",
+    strict_validation=True,
+    validate_responses=True,
+)
 
 
 if __name__ == "__main__":

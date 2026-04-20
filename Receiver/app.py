@@ -3,6 +3,7 @@ from connexion import NoContent
 import json
 import logging
 import logging.config
+import os
 import random
 import threading
 import time
@@ -11,6 +12,8 @@ import uuid
 import yaml
 from kafka import KafkaProducer
 from kafka.errors import KafkaError, NoBrokersAvailable
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
 
 
 with open("/config/receiver_log_config.yml", "r") as f:
@@ -226,9 +229,23 @@ def health():
     return NoContent, 200
 
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("openapi.yml",
+
+if os.environ.get("CORS_ALLOW_ALL") == "yes":
+    app.add_middleware(
+        CORSMiddleware,
+        position=MiddlewarePosition.BEFORE_EXCEPTION,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+app.add_api(
+    "openapi.yml",
+    base_path="/receiver",
     strict_validation=True,
-    validate_responses=True)
+    validate_responses=True,
+)
 
 if __name__ == "__main__":
     app.run(port=8080, host="0.0.0.0")

@@ -154,16 +154,22 @@ def health():
 
 app = connexion.FlaskApp(__name__, specification_dir="")
 
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+if os.environ.get("CORS_ALLOW_ALL") == "yes":
+    app.add_middleware(
+        CORSMiddleware,
+        position=MiddlewarePosition.BEFORE_EXCEPTION,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
+app.add_api(
+    "openapi.yml",
+    base_path="/processing",
+    strict_validation=True,
+    validate_responses=True,
+)
 
 
 if __name__ == "__main__":

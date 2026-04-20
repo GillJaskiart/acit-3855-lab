@@ -11,10 +11,10 @@ datastore:
   filename: /data/data.json
 services:
   receiver:
-    url: http://receiver:8080/health
+    url: http://receiver:8080/receiver/health
   storage:
-    url: http://storage:8090/health
+    url: http://storage:8090/storage/health
   processing:
-    url: http://processing:8100/health
+    url: http://processing:8100/processing/health
   analyzer:
-    url: http://analyzer:8110/health
+    url: http://analyzer:8110/analyzer/health
