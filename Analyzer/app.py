@@ -55,7 +55,6 @@ class KafkaAnalyzerWrapper:
         self._speeding_events = []
         self._congestion_events = []
         self._last_offsets = {}
-        self.connect()
         self._consumer_thread = threading.Thread(
             target=self._consume_messages,
             name="analyzer-kafka-consumer",
@@ -94,14 +93,20 @@ class KafkaAnalyzerWrapper:
                 )
 
                 partitions = temp_consumer.partitions_for_topic(self.topic)
-                if partitions is None:
+                if not partitions:
+                    logger.info(
+                        "Analyzer topic %s is not ready yet on %s; retrying",
+                        self.topic,
+                        self.hostname,
+                    )
                     raise NoBrokersAvailable()
 
                 topic_partitions = [
                     TopicPartition(self.topic, partition) for partition in sorted(partitions)
                 ]
                 temp_consumer.assign(topic_partitions)
-                temp_consumer.seek_to_beginning(*topic_partitions)
+                if topic_partitions:
+                    temp_consumer.seek_to_beginning(*topic_partitions)
 
                 self.consumer = temp_consumer
                 logger.info(
@@ -154,13 +159,13 @@ class KafkaAnalyzerWrapper:
     def _consume_messages(self):
         """Continuously consumes Kafka once and keeps the in-memory cache warm."""
         while True:
-            if self.consumer is None:
-                self.connect()
-
             try:
+                if self.consumer is None:
+                    self.connect()
+
                 for message in self.consumer:
                     self._record_message(message)
-            except (KafkaError, OSError, AttributeError, ValueError) as err:
+            except (KafkaError, OSError, AttributeError, ValueError, AssertionError) as err:
                 logger.warning("Analyzer consumer loop failed, reconnecting: %s", err)
                 with self._consumer_lock:
                     self._reset_consumer_locked()
